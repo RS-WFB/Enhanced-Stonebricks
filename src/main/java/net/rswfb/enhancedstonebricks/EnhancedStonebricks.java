@@ -1,0 +1,55 @@
+package net.rswfb.enhancedstonebricks;
+
+import com.mojang.logging.LogUtils;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.rswfb.enhancedstonebricks.block.ModBlocks;
+import net.rswfb.enhancedstonebricks.item.ModCreativeModeTab;
+import net.rswfb.enhancedstonebricks.item.ModItems;
+import org.slf4j.Logger;
+
+// The value here should match an entry in the META-INF/mods.toml file
+@Mod(EnhancedStonebricks.MODID)
+public class EnhancedStonebricks
+{
+	public static final String MODID = "enhancedstonebricks";
+	private static final Logger LOGGER = LogUtils.getLogger();
+
+	// gty
+	// gty
+	public EnhancedStonebricks(IEventBus modEventBus)
+	{
+		modEventBus.addListener(this::commonSetup);
+		// Items
+		ModItems.register(modEventBus);
+		// Blocks
+		ModBlocks.register(modEventBus);
+		// Item group
+		ModCreativeModeTab.register(modEventBus);
+
+		NeoForge.EVENT_BUS.register(this);
+	}
+
+	private void commonSetup(final FMLCommonSetupEvent event)
+	{
+	}
+
+	@SubscribeEvent
+	public void onServerStarting(ServerStartingEvent event)
+	{
+	}
+	@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+	public static class ClientModEvents
+	{
+		@SubscribeEvent
+		public static void onClientSetup(FMLClientSetupEvent event)
+		{
+		}
+	}
+}

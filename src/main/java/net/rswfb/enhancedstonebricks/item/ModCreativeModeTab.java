@@ -18,11 +18,7 @@ public class ModCreativeModeTab {
 		()-> CreativeModeTab.builder().icon(()->new ItemStack(ModItems.RUBY.get()))
 			.title(Component.translatable(TUTORIAL_TAB_STRING))
 			.displayItems((pParameters, pOutput) -> {
-				// items
-				pOutput.accept(ModItems.RUBY.get());
-				// blocks
-				pOutput.accept(ModItems.IRON_STONEBRICK.get());
-				pOutput.accept(ModItems.CARBONIZED_STONEBRICK.get());
+				ModItems.ITEMS_SUPPLIER.forEach(item->pOutput.accept(item.get()));
 			}).build());
 
 	public static void register(IEventBus eventBus) { CREATIVE_MODE_TABS.register(eventBus); }

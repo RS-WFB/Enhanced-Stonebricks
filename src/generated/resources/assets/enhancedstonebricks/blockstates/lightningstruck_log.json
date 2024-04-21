@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "enhancedstonebricks:block/lightningstruck_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "enhancedstonebricks:block/lightningstruck_log"
+    },
+    "axis=z": {
+      "model": "enhancedstonebricks:block/lightningstruck_log_horizontal",
+      "x": 90
+    }
+  }
+}

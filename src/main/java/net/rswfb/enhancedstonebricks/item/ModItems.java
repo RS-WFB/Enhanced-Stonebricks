@@ -21,6 +21,8 @@ public class ModItems {
 	// blocks
 	public static final Supplier<Item> IRON_STONEBRICK = register("iron_stonebrick", () -> new BlockItem(ModBlocks.IronStonebrick.get(), new Item.Properties()));
 	public static final Supplier<Item> CARBONIZED_STONEBRICK = register("carbonized_stonebrick", () -> new BlockItem(ModBlocks.CarbonizedStonebrick.get(), new Item.Properties()));
+	public static final Supplier<Item> STEEL_STONEBRICK = register("steel_stonebrick", () -> new BlockItem(ModBlocks.SteelStonebrick.get(), new Item.Properties()));
+	public static final Supplier<Item> LIGHTNINGSTRUCK_LOG = register("lightningstruck_log", () -> new BlockItem(ModBlocks.LightningStruckLog.get(), new Item.Properties()));
 	public static Supplier<Item> register(String name, Supplier<Item> supplier){
         Supplier<Item> supplierItem =  ITEMS.register(name,supplier);
         ITEMS_SUPPLIER.add(supplierItem);

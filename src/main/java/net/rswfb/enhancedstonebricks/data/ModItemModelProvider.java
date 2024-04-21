@@ -39,4 +39,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         this.getBuilder(item.toString())
                 .parent(new ModelFile.UncheckedModelFile("block/carbonized_stonebrick"));
     }
+    public void SteelStonebrickModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("block/steel_stonebrick"));
+    }
+    public void LightningStruckLogModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("block/lightningstruck_log"));
+    }
 }

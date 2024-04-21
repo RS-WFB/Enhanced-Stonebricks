@@ -17,5 +17,7 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add(ModItems.RUBY.get(),"Ruby");
         this.add(ModBlocks.IronStonebrick.get(),"Iron Stonebrick");
         this.add(ModBlocks.CarbonizedStonebrick.get(),"Carbonized Stonebrick");
+        this.add(ModBlocks.SteelStonebrick.get(),"Steel Stonebrick");
+        this.add(ModBlocks.LightningStruckLog.get(),"Lightning Struck Log");
     }
 }

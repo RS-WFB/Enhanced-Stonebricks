@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 100,
+  "experience": 0.3,
+  "ingredient": {
+    "item": "enhancedstonebricks:iron_stonebrick"
+  },
+  "result": "enhancedstonebricks:carbonized_stonebrick"
+}

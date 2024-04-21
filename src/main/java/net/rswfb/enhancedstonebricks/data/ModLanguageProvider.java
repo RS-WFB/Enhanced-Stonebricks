@@ -15,9 +15,13 @@ public class ModLanguageProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         this.add(ModItems.RUBY.get(),"Ruby");
+        this.add(ModItems.STEEL_INGOT.get(),"Steel Ingot");
+
         this.add(ModBlocks.IronStonebrick.get(),"Iron Stonebrick");
         this.add(ModBlocks.CarbonizedStonebrick.get(),"Carbonized Stonebrick");
         this.add(ModBlocks.SteelStonebrick.get(),"Steel Stonebrick");
+        this.add(ModBlocks.SteelBlock.get(),"Steel Block");
+
         this.add(ModBlocks.LightningStruckLog.get(),"Lightning Struck Log");
     }
 }

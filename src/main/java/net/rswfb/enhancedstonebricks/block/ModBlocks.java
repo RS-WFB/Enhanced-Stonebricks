@@ -20,6 +20,7 @@ public class ModBlocks {
 	public static final Supplier<Block> CarbonizedStonebrick = BLOCKS.register("carbonized_stonebrick", net.rswfb.enhancedstonebricks.block.custom.CarbonizedStonebrick::new);
 	public static final Supplier<Block> SteelStonebrick = BLOCKS.register("steel_stonebrick", net.rswfb.enhancedstonebricks.block.custom.SteelStonebrick::new);
 	public static final Supplier<Block> LightningStruckLog = BLOCKS.register("lightningstruck_log", net.rswfb.enhancedstonebricks.block.custom.LightningStruckLog::new);
+	public static final Supplier<Block> SteelBlock = BLOCKS.register("steel_block", net.rswfb.enhancedstonebricks.block.custom.SteelBlock::new);
 	public static void register(IEventBus eventBus) {
 		BLOCKS.register(eventBus);
 	}

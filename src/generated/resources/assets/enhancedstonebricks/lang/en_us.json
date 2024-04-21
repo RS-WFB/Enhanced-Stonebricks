@@ -2,6 +2,8 @@
   "block.enhancedstonebricks.carbonized_stonebrick": "Carbonized Stonebrick",
   "block.enhancedstonebricks.iron_stonebrick": "Iron Stonebrick",
   "block.enhancedstonebricks.lightningstruck_log": "Lightning Struck Log",
+  "block.enhancedstonebricks.steel_block": "Steel Block",
   "block.enhancedstonebricks.steel_stonebrick": "Steel Stonebrick",
-  "item.enhancedstonebricks.ruby": "Ruby"
+  "item.enhancedstonebricks.ruby": "Ruby",
+  "item.enhancedstonebricks.steel_ingot": "Steel Ingot"
 }

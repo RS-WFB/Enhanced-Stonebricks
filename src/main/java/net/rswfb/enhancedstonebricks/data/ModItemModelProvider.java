@@ -20,6 +20,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         this.RubyModel(getResourceLocation(ModItems.RUBY.get()));
+        this.SteelIngotModel(getResourceLocation(ModItems.STEEL_INGOT.get()));
     }
 
 
@@ -30,6 +31,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         this.getBuilder(item.toString())
                 .parent(new ModelFile.UncheckedModelFile("item/generated"))
                 .texture("layer0",new ResourceLocation("enhancedstonebricks:item/ruby"));
+    }
+    public void SteelIngotModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/steel_ingot"));
     }
     public void IronStonebrickModel(ResourceLocation item){
         this.getBuilder(item.toString())
@@ -43,8 +49,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         this.getBuilder(item.toString())
                 .parent(new ModelFile.UncheckedModelFile("block/steel_stonebrick"));
     }
+    public void SteelBlockModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("block/steel_block"));
+    }
     public void LightningStruckLogModel(ResourceLocation item){
         this.getBuilder(item.toString())
                 .parent(new ModelFile.UncheckedModelFile("block/lightningstruck_log"));
     }
+
 }

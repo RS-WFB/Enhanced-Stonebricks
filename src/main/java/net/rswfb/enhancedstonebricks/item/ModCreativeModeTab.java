@@ -11,7 +11,7 @@ import net.rswfb.enhancedstonebricks.EnhancedStonebricks;
 import java.util.function.Supplier;
 
 public class ModCreativeModeTab {
-	public static final String TUTORIAL_TAB_STRING = "EnhancedStonebricks";
+	public static final String TUTORIAL_TAB_STRING = "Enhanced Stonebricks";
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
 			DeferredRegister.create(Registries.CREATIVE_MODE_TAB, EnhancedStonebricks.MODID);
 	public static final Supplier<CreativeModeTab> TUTORIAL_TAB = CREATIVE_MODE_TABS.register("tutorial_tab",

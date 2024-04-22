@@ -1,6 +1,9 @@
-// 1.20.4	2024-04-21T23:19:46.0435998	Loot Tables
+// 1.20.4	2024-04-22T20:20:22.7243285	Loot Tables
 3fefa397cdd39f53f328dfa3c507d595185e90d6 data/enhancedstonebricks/loot_tables/blocks/carbonized_stonebrick.json
-06a152182376101922faa18ec166986fb25144b0 data/enhancedstonebricks/loot_tables/blocks/iron_stonebrick.json
+32f0b1aee0fa7bdde6f53b78a55fa0dda858c283 data/enhancedstonebricks/loot_tables/blocks/courtier_stonebrick.json
+6d9a351bc5424ba324c4ca0cd4719e99c4feb412 data/enhancedstonebricks/loot_tables/blocks/iron_stonebrick.json
+5dcb711ea0994b41b92a8fbb2e48271e594f8c42 data/enhancedstonebricks/loot_tables/blocks/king_stonebrick.json
 c1f0171ff9fe98535f457a334818f7b0fb14035f data/enhancedstonebricks/loot_tables/blocks/lightningstruck_log.json
+fdefd1fba87177355f942c2659e05e9e008ed091 data/enhancedstonebricks/loot_tables/blocks/queen_stonebrick.json
 6501f83f64b37a81f2bc956efba0209f4859eb95 data/enhancedstonebricks/loot_tables/blocks/steel_block.json
 511f40e7b4b4e798c471e6fe2ce7dd92ea1e80e9 data/enhancedstonebricks/loot_tables/blocks/steel_stonebrick.json

@@ -48,6 +48,11 @@ public class ModDataGeneratorHandler {
                                 new LootTableProvider.SubProviderEntry(net.rswfb.enhancedstonebricks.data.loot.ModBlockLootProvider::new, LootContextParamSets.BLOCK)
                         ))
         );
+        // tag
+        event.getGenerator().addProvider(
+                event.includeServer(),
+                (DataProvider.Factory<ModBlockTagProvider>) pOutput -> new ModBlockTagProvider(pOutput,lp,EnhancedStonebricks.MODID,efh)
+        );
 
     }
 }

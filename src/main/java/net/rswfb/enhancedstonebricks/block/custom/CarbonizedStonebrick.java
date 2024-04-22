@@ -5,6 +5,6 @@ import net.minecraft.world.level.block.Blocks;
 
 public class CarbonizedStonebrick extends Block {
 	public CarbonizedStonebrick() {
-		super(Properties.ofFullCopy(Blocks.STONE_BRICKS));
+		super(Properties.ofFullCopy(Blocks.STONE_BRICKS).requiresCorrectToolForDrops());
 	}
 }

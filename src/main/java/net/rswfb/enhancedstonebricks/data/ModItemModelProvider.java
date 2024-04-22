@@ -21,6 +21,10 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         this.RubyModel(getResourceLocation(ModItems.RUBY.get()));
         this.SteelIngotModel(getResourceLocation(ModItems.STEEL_INGOT.get()));
+        this.SteelHelmetModel(getResourceLocation(ModItems.STEEL_HELMET.get()));
+        this.SteelChestplateModel(getResourceLocation(ModItems.STEEL_CHESTPLATE.get()));
+        this.SteelLeggingsModel(getResourceLocation(ModItems.STEEL_LEGGINGS.get()));
+        this.SteelBootsModel(getResourceLocation(ModItems.STEEL_BOOTS.get()));
     }
 
 
@@ -37,6 +41,26 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .parent(new ModelFile.UncheckedModelFile("item/generated"))
                 .texture("layer0", new ResourceLocation("enhancedstonebricks:item/steel_ingot"));
     }
+    public void SteelHelmetModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/steel_helmet"));
+    }
+    public void SteelChestplateModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/steel_chestplate"));
+    }
+    public void SteelLeggingsModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/steel_leggings"));
+    }
+    public void SteelBootsModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/steel_boots"));
+    }
     public void IronStonebrickModel(ResourceLocation item){
         this.getBuilder(item.toString())
                 .parent(new ModelFile.UncheckedModelFile("block/iron_stonebrick"));
@@ -52,6 +76,18 @@ public class ModItemModelProvider extends ItemModelProvider {
     public void SteelBlockModel(ResourceLocation item){
         this.getBuilder(item.toString())
                 .parent(new ModelFile.UncheckedModelFile("block/steel_block"));
+    }
+    public void KingStonebrickModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("block/king_stonebrick"));
+    }
+    public void QueenStonebrickModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("block/queen_stonebrick"));
+    }
+    public void CourtierStonebrickModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("block/courtier_stonebrick"));
     }
     public void LightningStruckLogModel(ResourceLocation item){
         this.getBuilder(item.toString())

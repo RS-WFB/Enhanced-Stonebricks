@@ -5,6 +5,6 @@ import net.minecraft.world.level.block.Blocks;
 
 public class IronStonebrick extends Block {
 	public IronStonebrick() {
-		super(Properties.ofFullCopy(Blocks.STONE_BRICKS));
+		super(Properties.ofFullCopy(Blocks.STONE_BRICKS).requiresCorrectToolForDrops());
 	}
 }

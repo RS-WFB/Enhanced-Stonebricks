@@ -23,6 +23,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
        this.simpleBlockWithItem(ModBlocks.CarbonizedStonebrick.get(),cubeAll(ModBlocks.CarbonizedStonebrick.get()));
        this.simpleBlockWithItem(ModBlocks.SteelStonebrick.get(),cubeAll(ModBlocks.SteelStonebrick.get()));
        this.simpleBlockWithItem(ModBlocks.SteelBlock.get(),cubeAll(ModBlocks.SteelBlock.get()));
+       this.simpleBlockWithItem(ModBlocks.KingStonebrick.get(),cubeAll(ModBlocks.KingStonebrick.get()));
+       this.simpleBlockWithItem(ModBlocks.QueenStonebrick.get(),cubeAll(ModBlocks.QueenStonebrick.get()));
+       this.simpleBlockWithItem(ModBlocks.CourtierStonebrick.get(),cubeAll(ModBlocks.CourtierStonebrick.get()));
 
        logBlock(((RotatedPillarBlock) ModBlocks.LightningStruckLog.get()));
        simpleBlockItem(ModBlocks.LightningStruckLog.get(),models().withExistingParent("enhancedstonebricks:lightningstruck_log", "minecraft:block/cube_column"));

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "enhancedstonebricks:courtier_stonebrick"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "enhancedstonebricks:blocks/courtier_stonebrick"
+}

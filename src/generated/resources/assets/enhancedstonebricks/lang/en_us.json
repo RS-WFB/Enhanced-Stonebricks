@@ -1,9 +1,16 @@
 {
   "block.enhancedstonebricks.carbonized_stonebrick": "Carbonized Stonebrick",
+  "block.enhancedstonebricks.courtier_stonebrick": "Courtier Stonebrick",
   "block.enhancedstonebricks.iron_stonebrick": "Iron Stonebrick",
+  "block.enhancedstonebricks.king_stonebrick": "King Stonebrick",
   "block.enhancedstonebricks.lightningstruck_log": "Lightning Struck Log",
+  "block.enhancedstonebricks.queen_stonebrick": "Queen Stonebrick",
   "block.enhancedstonebricks.steel_block": "Steel Block",
   "block.enhancedstonebricks.steel_stonebrick": "Steel Stonebrick",
   "item.enhancedstonebricks.ruby": "Ruby",
-  "item.enhancedstonebricks.steel_ingot": "Steel Ingot"
+  "item.enhancedstonebricks.steel_boots": "Steel Boots",
+  "item.enhancedstonebricks.steel_chestplate": "Steel Chestplate",
+  "item.enhancedstonebricks.steel_helmet": "Steel Helmet",
+  "item.enhancedstonebricks.steel_ingot": "Steel Ingot",
+  "item.enhancedstonebricks.steel_leggings": "Steel Leggings"
 }

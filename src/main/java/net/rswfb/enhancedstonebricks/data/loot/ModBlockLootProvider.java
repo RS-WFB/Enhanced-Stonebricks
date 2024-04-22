@@ -20,10 +20,14 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         this.dropSelf(ModBlocks.SteelBlock.get());
+        this.dropSelf(ModBlocks.IronStonebrick.get());
         this.dropSelf(ModBlocks.SteelStonebrick.get());
         this.dropSelf(ModBlocks.CarbonizedStonebrick.get());
         this.dropSelf(ModBlocks.LightningStruckLog.get());
-        this.dropOther(ModBlocks.IronStonebrick.get(), ModItems.RUBY.get());
+        this.dropSelf(ModBlocks.KingStonebrick.get());
+        this.dropSelf(ModBlocks.QueenStonebrick.get());
+        this.dropSelf(ModBlocks.CourtierStonebrick.get());
+
     }
 
     @Override

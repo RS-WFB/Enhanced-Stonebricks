@@ -1,0 +1,6 @@
+{
+  "type": "enhancedstonebricks:mod_desert_relic_structure",
+  "biomes": "#minecraft:is_forest",
+  "spawn_overrides": {},
+  "step": "surface_structures"
+}

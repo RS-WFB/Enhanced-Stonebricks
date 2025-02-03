@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "enhancedstonebricks:block/nether_relic_block"
+    }
+  }
+}

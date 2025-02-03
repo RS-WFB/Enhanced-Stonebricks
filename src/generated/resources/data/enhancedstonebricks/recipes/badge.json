@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": {
+      "item": "enhancedstonebricks:steel_ingot"
+    },
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "@": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "@!@",
+    "!#!",
+    "@!@"
+  ],
+  "result": {
+    "item": "enhancedstonebricks:badge"
+  }
+}

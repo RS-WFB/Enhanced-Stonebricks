@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 87364230,
+    "separation": 8,
+    "spacing": 28
+  },
+  "structures": [
+    {
+      "structure": "enhancedstonebricks:mod_vitality_relic_structure",
+      "weight": 1
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "enhancedstonebricks:core_of_nether"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "enhancedstonebricks:core_of_nether"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "enhancedstonebricks:core_of_nether"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "enhancedstonebricks:core_of_nether"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "enhancedstonebricks:core_of_nether"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "enhancedstonebricks:core_of_nether"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "enhancedstonebricks:core_of_relic"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "enhancedstonebricks:blocks/nether_relic_block"
+}

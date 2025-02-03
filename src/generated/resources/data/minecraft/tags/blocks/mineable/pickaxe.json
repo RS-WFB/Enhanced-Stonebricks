@@ -1,0 +1,20 @@
+{
+  "values": [
+    "enhancedstonebricks:steel_block",
+    "enhancedstonebricks:steel_stonebrick",
+    "enhancedstonebricks:iron_stonebrick",
+    "enhancedstonebricks:carbonized_stonebrick",
+    "enhancedstonebricks:king_stonebrick",
+    "enhancedstonebricks:queen_stonebrick",
+    "enhancedstonebricks:courtier_stonebrick",
+    "enhancedstonebricks:gold_stonebrick",
+    "enhancedstonebricks:aether_stonebrick",
+    "enhancedstonebricks:desert_relic_block",
+    "enhancedstonebricks:end_relic_block",
+    "enhancedstonebricks:nether_relic_block",
+    "enhancedstonebricks:ocean_relic_block",
+    "enhancedstonebricks:soul_relic_block",
+    "enhancedstonebricks:vitality_relic_block",
+    "enhancedstonebricks:stonebrick_portal_block_default"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_steel_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "enhancedstonebricks:steel_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "enhancedstonebricks:steel_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_steel_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "enhancedstonebricks:steel_ingot"
+    ]
+  }
+}

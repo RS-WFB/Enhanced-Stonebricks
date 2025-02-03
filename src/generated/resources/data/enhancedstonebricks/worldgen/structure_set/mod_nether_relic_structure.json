@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 65423147,
+    "separation": 8,
+    "spacing": 28
+  },
+  "structures": [
+    {
+      "structure": "enhancedstonebricks:mod_nether_relic_structure",
+      "weight": 1
+    }
+  ]
+}

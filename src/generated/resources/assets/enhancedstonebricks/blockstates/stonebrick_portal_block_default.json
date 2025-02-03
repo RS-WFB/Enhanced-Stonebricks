@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "mod_lit=0": {
+      "model": "enhancedstonebricks:block/stonebrick_portal_block_default"
+    },
+    "mod_lit=1": {
+      "model": "enhancedstonebricks:block/stonebrick_portal_block_d1"
+    },
+    "mod_lit=2": {
+      "model": "enhancedstonebricks:block/stonebrick_portal_block_d2"
+    },
+    "mod_lit=3": {
+      "model": "enhancedstonebricks:block/stonebrick_portal_block_e"
+    },
+    "mod_lit=4": {
+      "model": "enhancedstonebricks:block/stonebrick_portal_block_n"
+    },
+    "mod_lit=5": {
+      "model": "enhancedstonebricks:block/stonebrick_portal_block_o"
+    },
+    "mod_lit=6": {
+      "model": "enhancedstonebricks:block/stonebrick_portal_block_r"
+    },
+    "mod_lit=7": {
+      "model": "enhancedstonebricks:block/stonebrick_portal_block_s"
+    },
+    "mod_lit=8": {
+      "model": "enhancedstonebricks:block/stonebrick_portal_block_v"
+    }
+  }
+}

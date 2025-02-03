@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 14357619,
+    "separation": 8,
+    "spacing": 28
+  },
+  "structures": [
+    {
+      "structure": "enhancedstonebricks:mod_desert_relic_structure",
+      "weight": 1
+    }
+  ]
+}

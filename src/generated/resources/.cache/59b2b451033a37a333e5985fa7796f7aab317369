@@ -1,0 +1,6 @@
+// 1.20.4	2024-09-10T01:14:57.2018345	Tags for minecraft:block mod id enhancedstonebricks
+71f4f59cffc352288912f80269731923fc578e42 data/minecraft/tags/blocks/mineable/axe.json
+9fe67486429bdbca3d7533ba77691b42949a3972 data/minecraft/tags/blocks/mineable/pickaxe.json
+2a2c094301ae75a9eba4a7e032b5889368d1d717 data/minecraft/tags/blocks/needs_diamond_tool.json
+7e16abec03debc0a2a83a0432c1fd003b9a24b69 data/minecraft/tags/blocks/needs_iron_tool.json
+7143a4be28726e0a05fefdf9e1511813068fe694 data/minecraft/tags/blocks/needs_stone_tool.json

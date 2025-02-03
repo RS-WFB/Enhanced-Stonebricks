@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": {
+      "item": "enhancedstonebricks:aether"
+    },
+    "#": {
+      "item": "enhancedstonebricks:badge"
+    },
+    "@": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "@!@",
+    "!#!",
+    "@!@"
+  ],
+  "result": {
+    "item": "enhancedstonebricks:aether_badge"
+  }
+}

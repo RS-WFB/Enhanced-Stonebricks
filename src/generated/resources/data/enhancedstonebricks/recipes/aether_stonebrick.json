@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "enhancedstonebricks:gold_stonebrick"
+    },
+    {
+      "item": "enhancedstonebricks:aether"
+    },
+    {
+      "item": "enhancedstonebricks:aether"
+    }
+  ],
+  "result": {
+    "item": "enhancedstonebricks:aether_stonebrick"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "!": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "#": {
+      "item": "enhancedstonebricks:steel_stonebrick"
+    },
+    "@": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    "!@!",
+    "@#@",
+    "!@!"
+  ],
+  "result": {
+    "item": "enhancedstonebricks:gold_stonebrick"
+  }
+}

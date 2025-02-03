@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.3,
+  "ingredient": [
+    {
+      "item": "enhancedstonebricks:core_of_desert"
+    },
+    {
+      "item": "enhancedstonebricks:core_of_nether"
+    },
+    {
+      "item": "enhancedstonebricks:core_of_end"
+    },
+    {
+      "item": "enhancedstonebricks:core_of_ocean"
+    },
+    {
+      "item": "enhancedstonebricks:core_of_relic"
+    },
+    {
+      "item": "enhancedstonebricks:core_of_soul"
+    },
+    {
+      "item": "enhancedstonebricks:core_of_vitality"
+    }
+  ],
+  "result": "enhancedstonebricks:core_of_destruction"
+}

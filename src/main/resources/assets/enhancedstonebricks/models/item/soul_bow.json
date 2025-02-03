@@ -1,0 +1,28 @@
+{
+  "parent": "item/bow",
+  "textures": {
+    "layer0": "enhancedstonebricks:item/soul_bow"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "enhancedstonebricks:pulling": 1
+      },
+      "model": "enhancedstonebricks:item/soul_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "enhancedstonebricks:pulling": 1,
+        "enhancedstonebricks:power": 0.65
+      },
+      "model": "enhancedstonebricks:item/soul_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "enhancedstonebricks:pulling": 1,
+        "enhancedstonebricks:power": 0.9
+      },
+      "model": "enhancedstonebricks:item/soul_bow_pulling_2"
+    }
+  ]
+}

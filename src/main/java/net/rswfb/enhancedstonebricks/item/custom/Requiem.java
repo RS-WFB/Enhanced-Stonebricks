@@ -1,8 +1,6 @@
 package net.rswfb.enhancedstonebricks.item.custom;
 
-import net.minecraft.client.particle.SoulParticle;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -12,21 +10,20 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.LargeFireball;
-import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.event.EventHooks;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.rswfb.enhancedstonebricks.network.packet.SyncPacket;
 
 import java.util.function.Predicate;
 
-public class SoulBow extends BowItem {
-    public SoulBow() {
+public class Requiem extends BowItem {
+    public static final String ENERGIZE_STATE_TAG = "energize_state";
+
+    public Requiem() {
         super(new Properties().durability(1000));
     }
 

@@ -36,6 +36,8 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add(ModItems.STEEL_LEGGINGS.get(),"Steel Leggings");
         this.add(ModItems.STEEL_BOOTS.get(),"Steel Boots");
 
+        this.add(ModItems.REQUIEM.get(),"Requiem");
+
         this.add(ModBlocks.IronStonebrick.get(),"Iron Stonebrick");
         this.add(ModBlocks.CarbonizedStonebrick.get(),"Carbonized Stonebrick");
         this.add(ModBlocks.SteelStonebrick.get(),"Steel Stonebrick");

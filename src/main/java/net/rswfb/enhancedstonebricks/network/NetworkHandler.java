@@ -9,6 +9,7 @@ import net.rswfb.enhancedstonebricks.ExampleMod;
 import net.rswfb.enhancedstonebricks.network.handler.ClientPacketHandler;
 import net.rswfb.enhancedstonebricks.network.packet.SoulFireSyncPacket;
 import net.rswfb.enhancedstonebricks.network.packet.SyncPacket;
+import net.rswfb.enhancedstonebricks.network.packet.SyncTexturePacket;
 
 @Mod.EventBusSubscriber(modid = EnhancedStonebricks.MODID,bus = Mod.EventBusSubscriber.Bus.MOD)
 public class NetworkHandler {
@@ -27,6 +28,11 @@ public class NetworkHandler {
                 SyncPacket.ID,
                 SyncPacket::read,
                 handler -> handler.client(ClientPacketHandler::handleSync)
+        );
+        registrar.play(
+                SyncTexturePacket.ID,
+                SyncTexturePacket::read,
+                handler -> handler.client(ClientPacketHandler::handleSyncTexturePacket)
         );
     }
 }

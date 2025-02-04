@@ -31,8 +31,10 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.rswfb.enhancedstonebricks.EnhancedStonebricks;
 import net.rswfb.enhancedstonebricks.item.ModItems;
+import net.rswfb.enhancedstonebricks.item.custom.Requiem;
 import net.rswfb.enhancedstonebricks.network.packet.SoulFireSyncPacket;
 import net.rswfb.enhancedstonebricks.network.packet.SyncPacket;
+import net.rswfb.enhancedstonebricks.network.packet.SyncTexturePacket;
 
 import java.util.*;
 
@@ -48,7 +50,7 @@ public class ModEvents {
             // 检查射手是否手持自定义弓
             if (arrow.getOwner() instanceof Player player) {
                 ItemStack bow = player.getUseItem();
-                if (bow.getItem() == ModItems.SOUL_BOW.get()) {
+                if (bow.getItem() == ModItems.REQUIEM.get()) {
                     // 标记箭矢为灵魂火轨迹
                     arrow.getPersistentData().putBoolean("soul_fire", true);
                     SyncPacket packet = new SyncPacket(arrow.getId(), "soul_fire" ,true);
@@ -97,18 +99,27 @@ public class ModEvents {
             Entity target = entityHit.getEntity();
             Level level = arrow.level();
             LivingEntity owner = (LivingEntity) arrow.getOwner();
+            ItemStack stack = owner.getMainHandItem();
             // 仅在服务端执行逻辑
             if (!level.isClientSide) {
                 // 示例：对击中的实体施加效果（如爆炸）
                 if (target instanceof LivingEntity livingTarget && arrow.getPersistentData().getBoolean("is_soul_crit")) {
+                    if (counter1 % 3 == 2) {
+                        CompoundTag nbt = stack.getOrCreateTag();
+                        nbt.putInt(Requiem.ENERGIZE_STATE_TAG, 1);
+                        SyncTexturePacket packet = new SyncTexturePacket(owner.getId(), Requiem.ENERGIZE_STATE_TAG, 1);
+                        PacketDistributor.PLAYER.with((ServerPlayer) owner).send(packet);
+
+                    }
                     if (counter1 % 3 == 0) {
                         summonDragonFireball(level, target, owner);
+                        CompoundTag nbt = stack.getOrCreateTag();
+                        nbt.putInt(Requiem.ENERGIZE_STATE_TAG, 0);
+                        SyncTexturePacket packet = new SyncTexturePacket(owner.getId(), Requiem.ENERGIZE_STATE_TAG, 0);
+                        PacketDistributor.PLAYER.with((ServerPlayer) owner).send(packet);
                     }
                     counter1 ++;
                 }
-
-                // 记录日志（可选）
-                EnhancedStonebricks.LOGGER.info("HIT: {} -> {}", arrow.getName().getString(), target.getName().getString());
             }
         }
     }

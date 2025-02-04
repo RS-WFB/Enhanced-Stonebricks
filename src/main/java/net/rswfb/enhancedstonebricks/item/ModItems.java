@@ -9,10 +9,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.rswfb.enhancedstonebricks.EnhancedStonebricks;
 import net.rswfb.enhancedstonebricks.block.ModBlocks;
-import net.rswfb.enhancedstonebricks.entity.ModEntityTypes;
-import net.rswfb.enhancedstonebricks.entity.projectile.DestructionCoreEntity;
 import net.rswfb.enhancedstonebricks.item.custom.*;
-import net.rswfb.enhancedstonebricks.item.custom.tool.*;
 import net.rswfb.enhancedstonebricks.item.custom.tool.ModArmorMaterial;
 
 import java.util.ArrayList;
@@ -51,7 +48,7 @@ public class ModItems {
 	public static final Supplier<Item> STEEL_BOOTS = register("steel_boots", () -> new ArmorItem(ModArmorMaterial.STEEL, ArmorItem.Type.BOOTS, (new Item.Properties())));
 
 	// weapons
-	public static final Supplier<Item> SOUL_BOW = register("soul_bow", SoulBow::new);
+	public static final Supplier<Item> REQUIEM = register("requiem", Requiem::new);
 
 	// blocks
 	public static final Supplier<Item> IRON_STONEBRICK = register("iron_stonebrick", () -> new BlockItem(ModBlocks.IronStonebrick.get(), new Item.Properties()));

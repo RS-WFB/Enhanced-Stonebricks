@@ -1,0 +1,6 @@
+{
+  "parent": "item/bow",
+  "textures": {
+    "layer0": "enhancedstonebricks:item/requiem_pulling_2"
+  }
+}

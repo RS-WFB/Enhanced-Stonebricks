@@ -2,12 +2,19 @@ package net.rswfb.enhancedstonebricks.network.handler;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.Packet;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 import net.rswfb.enhancedstonebricks.EnhancedStonebricks;
+import net.rswfb.enhancedstonebricks.item.custom.Requiem;
 import net.rswfb.enhancedstonebricks.network.packet.SoulFireSyncPacket;
 import net.rswfb.enhancedstonebricks.network.packet.SyncPacket;
+import net.rswfb.enhancedstonebricks.network.packet.SyncTexturePacket;
 
 public class ClientPacketHandler {
     public static void handleSoulFireSync(SoulFireSyncPacket packet, IPayloadContext context) {
@@ -43,6 +50,38 @@ public class ClientPacketHandler {
                     }, 1); // 延迟 10 ticks
                 } else  {
                     entity.getPersistentData().putBoolean(packet.pKey(), true);
+                }
+            }
+        });
+    }
+    public static void handleSyncTexturePacket(SyncTexturePacket packet, IPayloadContext context) {
+        context.workHandler().execute(() -> {
+            if (Minecraft.getInstance().level != null) {
+                Entity entity = Minecraft.getInstance().level.getEntity(packet.entityId());
+                if (entity == null) {
+                    DelayedTaskManager.scheduleTask(() -> {
+                        Entity retryEntity = Minecraft.getInstance().level.getEntity(packet.entityId());
+                        if (retryEntity instanceof Player player){
+                            ItemStack item = player.getMainHandItem();
+                            CompoundTag nbt = item.getOrCreateTag();
+                            nbt.putInt(packet.pKey(), packet.pswitch());
+                        } else {
+                            if (entity instanceof Player player) {
+                                ItemStack item = player.getMainHandItem();
+                                CompoundTag nbt = item.getOrCreateTag();
+                                nbt.putInt(packet.pKey(), packet.pswitch());
+                            }
+
+                        }
+                        }
+                    , 1); // 延迟 10 ticks
+
+                } else {
+                    if (entity instanceof Player player) {
+                        ItemStack item = player.getMainHandItem();
+                        CompoundTag nbt = item.getOrCreateTag();
+                        nbt.putInt(packet.pKey(), packet.pswitch());
+                    }
                 }
             }
         });

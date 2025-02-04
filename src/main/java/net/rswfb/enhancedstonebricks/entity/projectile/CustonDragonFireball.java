@@ -48,7 +48,7 @@ public class CustonDragonFireball extends DragonFireball {
 
                 areaeffectcloud.setParticle(ParticleTypes.SOUL_FIRE_FLAME);
                 areaeffectcloud.setRadius(3.0F);
-                areaeffectcloud.setDuration(600);
+                areaeffectcloud.setDuration(100);
                 areaeffectcloud.setRadiusPerTick((7.0F - areaeffectcloud.getRadius()) / (float)areaeffectcloud.getDuration());
                 areaeffectcloud.addEffect(new MobEffectInstance(MobEffects.HARM, 1, 1));
                 if (!list.isEmpty()) {

@@ -1,0 +1,57 @@
+{
+  "parent": "item/bow",
+  "textures": {
+    "layer0": "enhancedstonebricks:item/requiem"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "enhancedstonebricks:energize_state": 1
+      },
+      "model": "enhancedstonebricks:item/requiem_eng"
+    },
+    {
+      "predicate": {
+        "enhancedstonebricks:pulling": 1
+      },
+      "model": "enhancedstonebricks:item/requiem_pulling_0"
+    },
+    {
+      "predicate": {
+        "enhancedstonebricks:pulling": 1,
+        "enhancedstonebricks:power": 0.65
+      },
+      "model": "enhancedstonebricks:item/requiem_pulling_1"
+    },
+    {
+      "predicate": {
+        "enhancedstonebricks:pulling": 1,
+        "enhancedstonebricks:power": 0.9
+      },
+      "model": "enhancedstonebricks:item/requiem_pulling_2"
+    },
+    {
+      "predicate": {
+        "enhancedstonebricks:energize_state": 1,
+        "enhancedstonebricks:pulling": 1
+      },
+      "model": "enhancedstonebricks:item/requiem_eng_pulling_0"
+    },
+    {
+      "predicate": {
+        "enhancedstonebricks:energize_state": 1,
+        "enhancedstonebricks:pulling": 1,
+        "enhancedstonebricks:power": 0.65
+      },
+      "model": "enhancedstonebricks:item/requiem_eng_pulling_1"
+    },
+    {
+      "predicate": {
+        "enhancedstonebricks:energize_state": 1,
+        "enhancedstonebricks:pulling": 1,
+        "enhancedstonebricks:power": 0.9
+      },
+      "model": "enhancedstonebricks:item/requiem_eng_pulling_2"
+    }
+  ]
+}

@@ -3,29 +3,44 @@ package net.rswfb.enhancedstonebricks.event;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.EntityHitResult;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.TickEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.neoforge.event.entity.ProjectileImpactEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.rswfb.enhancedstonebricks.EnhancedStonebricks;
 import net.rswfb.enhancedstonebricks.item.ModItems;
 import net.rswfb.enhancedstonebricks.network.packet.SoulFireSyncPacket;
+import net.rswfb.enhancedstonebricks.network.packet.SyncPacket;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
+import static net.rswfb.enhancedstonebricks.event.utils.Funcs.summonDragonFireball;
 
 @Mod.EventBusSubscriber(modid = EnhancedStonebricks.MODID)
 public class ModEvents {
+    private static int counter1 = 1;
 
     @SubscribeEvent
     public static void onArrowFired(EntityJoinLevelEvent event) {
@@ -36,7 +51,7 @@ public class ModEvents {
                 if (bow.getItem() == ModItems.SOUL_BOW.get()) {
                     // 标记箭矢为灵魂火轨迹
                     arrow.getPersistentData().putBoolean("soul_fire", true);
-                    SoulFireSyncPacket packet = new SoulFireSyncPacket(arrow.getId(), true);
+                    SyncPacket packet = new SyncPacket(arrow.getId(), "soul_fire" ,true);
                     // 发送给所有追踪该箭矢的玩家（包括射箭的玩家）
                     PacketDistributor.PLAYER.with((ServerPlayer) player).send(packet);
                 }
@@ -74,8 +89,31 @@ public class ModEvents {
             };
         }
     }
+    @SubscribeEvent
+    public static void onProjectileImpact(ProjectileImpactEvent event) {
+        Projectile projectile = event.getProjectile();
+        // 检查是否为箭矢，并且击中了实体（而非方块）
+        if (projectile instanceof AbstractArrow arrow && event.getRayTraceResult() instanceof EntityHitResult entityHit) {
+            Entity target = entityHit.getEntity();
+            Level level = arrow.level();
+            LivingEntity owner = (LivingEntity) arrow.getOwner();
+            // 仅在服务端执行逻辑
+            if (!level.isClientSide) {
+                // 示例：对击中的实体施加效果（如爆炸）
+                if (target instanceof LivingEntity livingTarget && arrow.getPersistentData().getBoolean("is_soul_crit")) {
+                    if (counter1 % 3 == 0) {
+                        summonDragonFireball(level, target, owner);
+                    }
+                    counter1 ++;
+                }
 
-    // 玩家加入时同步所有现有灵魂火箭
+                // 记录日志（可选）
+                EnhancedStonebricks.LOGGER.info("HIT: {} -> {}", arrow.getName().getString(), target.getName().getString());
+            }
+        }
+    }
+
+            // 玩家加入时同步所有现有灵魂火箭
     @SubscribeEvent
     public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         ServerPlayer player = (ServerPlayer) event.getEntity();
@@ -90,4 +128,5 @@ public class ModEvents {
             }
         });
     }
+
 }

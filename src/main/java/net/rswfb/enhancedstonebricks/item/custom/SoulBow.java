@@ -3,6 +3,7 @@ package net.rswfb.enhancedstonebricks.item.custom;
 import net.minecraft.client.particle.SoulParticle;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -19,6 +20,8 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.event.EventHooks;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.rswfb.enhancedstonebricks.network.packet.SyncPacket;
 
 import java.util.function.Predicate;
 
@@ -49,59 +52,42 @@ public class SoulBow extends BowItem {
                     if (!pLevel.isClientSide) {
 
                         ArrowItem arrowitem = (ArrowItem)(itemstack.getItem() instanceof ArrowItem ? itemstack.getItem() : Items.ARROW);
-                        for (int ra = 0; ra < 4; ra++) {
-                            AbstractArrow abstractarrow = arrowitem.createArrow(pLevel, itemstack, player);
-                            AbstractArrow abstractarrow1 = arrowitem.createArrow(pLevel, itemstack, player);
-                            AbstractArrow abstractarrow2 = arrowitem.createArrow(pLevel, itemstack, player);
-                            abstractarrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, f * 5.00F, 0.2F);
-                            abstractarrow1.shootFromRotation(player, player.getXRot(), player.getYRot()+10, 0.0F, f * 4.0F, 0.5F);
-                            abstractarrow2.shootFromRotation(player, player.getXRot(), player.getYRot()-10, 0.0F, f * 4.0F, 0.5F);
 
-                            if (f == 1.0F) {
-                                abstractarrow.setCritArrow(true);
-                                abstractarrow1.setCritArrow(true);
-                                abstractarrow2.setCritArrow(true);
-                            }
+                        AbstractArrow abstractarrow = arrowitem.createArrow(pLevel, itemstack, player);
+                        abstractarrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, f * 5.00F, 1.0F);
 
-                            int j = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, pStack);
-                            if (j > 0) {
-                                abstractarrow.setBaseDamage(abstractarrow.getBaseDamage() + (double)j * 0.5 - 2);
-                                abstractarrow1.setBaseDamage(abstractarrow1.getBaseDamage() + (double)j * 0.5 - 2);
-                                abstractarrow2.setBaseDamage(abstractarrow2.getBaseDamage() + (double)j * 0.5 - 2);
-                            }
+                        if (f == 1.0F) {
+                            abstractarrow.setCritArrow(true);
+                            abstractarrow.getPersistentData().putBoolean("is_soul_crit", true);
+                            SyncPacket sync = new SyncPacket(abstractarrow.getId(), "is_soul_crit", true);
+                            PacketDistributor.PLAYER.with((ServerPlayer) player).send(sync);
+                        }
 
-                            int k = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.PUNCH_ARROWS, pStack);
-                            if (k > 0) {
-                                abstractarrow.setKnockback(k);
-                                abstractarrow1.setKnockback(k);
-                                abstractarrow2.setKnockback(k);
-                            }
+                        int j = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, pStack);
+                        if (j > 0) {
+                            abstractarrow.setBaseDamage(abstractarrow.getBaseDamage() + (double)j * 0.5 + 1);
+                        }
 
+                        int k = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.PUNCH_ARROWS, pStack);
+                        if (k > 0) {
+                            abstractarrow.setKnockback(k);
+                        }
+
+
+                        int l = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FLAMING_ARROWS, pStack);
+                        if (l > 0) {
                             abstractarrow.setSecondsOnFire(100);
-                            int l = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FLAMING_ARROWS, pStack);
-                            if (l > 0) {
-                                abstractarrow1.setSecondsOnFire(100);
-                                abstractarrow2.setSecondsOnFire(100);
-                            }
-
-
-                            pStack.hurtAndBreak(1, player, p_311711_ -> p_311711_.broadcastBreakEvent(player.getUsedItemHand()));
-                            if (flag1 || player.getAbilities().instabuild && (itemstack.is(Items.SPECTRAL_ARROW) || itemstack.is(Items.TIPPED_ARROW))) {
-                                abstractarrow.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
-                                abstractarrow1.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
-                                abstractarrow2.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
-                            }
-
-                            pLevel.addFreshEntity(abstractarrow);
-                            pLevel.addFreshEntity(abstractarrow1);
-                            pLevel.addFreshEntity(abstractarrow2);
-                            try {
-                                Thread.sleep(1000);
-                            } catch (InterruptedException e) {
-                                throw new RuntimeException(e);
-                            }
                         }
+
+
+                        pStack.hurtAndBreak(1, player, p_311711_ -> p_311711_.broadcastBreakEvent(player.getUsedItemHand()));
+                        if (flag1 || player.getAbilities().instabuild && (itemstack.is(Items.SPECTRAL_ARROW) || itemstack.is(Items.TIPPED_ARROW))) {
+                            abstractarrow.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
                         }
+
+                        pLevel.addFreshEntity(abstractarrow);
+
+                    }
 
 
                     pLevel.playSound(

@@ -7,6 +7,7 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 import net.rswfb.enhancedstonebricks.EnhancedStonebricks;
 import net.rswfb.enhancedstonebricks.network.packet.SoulFireSyncPacket;
+import net.rswfb.enhancedstonebricks.network.packet.SyncPacket;
 
 public class ClientPacketHandler {
     public static void handleSoulFireSync(SoulFireSyncPacket packet, IPayloadContext context) {
@@ -24,6 +25,24 @@ public class ClientPacketHandler {
                     }, 1); // 延迟 10 ticks
                 } else if (entity instanceof AbstractArrow arrow) {
                     arrow.getPersistentData().putBoolean("soul_fire", true);
+                }
+            }
+        });
+    }
+    public static void handleSync(SyncPacket packet, IPayloadContext context) {
+        context.workHandler().execute(() -> {
+            if (Minecraft.getInstance().level != null) {
+                Entity entity = Minecraft.getInstance().level.getEntity(packet.entityId());
+                if (entity == null) {
+                    // 延迟 1 秒后重试（20 ticks = 1秒）
+                    DelayedTaskManager.scheduleTask(() -> {
+                        Entity retryEntity = Minecraft.getInstance().level.getEntity(packet.entityId());
+                        if (retryEntity != null) {
+                            retryEntity.getPersistentData().putBoolean(packet.pKey(), true);
+                        }
+                    }, 1); // 延迟 10 ticks
+                } else  {
+                    entity.getPersistentData().putBoolean(packet.pKey(), true);
                 }
             }
         });

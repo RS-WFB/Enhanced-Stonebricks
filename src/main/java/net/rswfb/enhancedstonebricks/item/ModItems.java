@@ -28,15 +28,21 @@ public class ModItems {
 	public static final Supplier<Item> BADGE = register("badge", () -> new Item(new Item.Properties()));
 	public static final Supplier<Item> AETHER_BADGE = register("aether_badge", () -> new Item(new Item.Properties()));
 	public static final Supplier<Item> ELEMENTAL_CORE = register("elemental_core", () -> new Item(new Item.Properties()));
-	public static final Supplier<Item> CORE_OF_DESERT = register("core_of_desert", () -> new Item(new Item.Properties()));
+	public static final Supplier<Item> CORE_OF_DESERT = register("core_of_desert", () -> new DesertCoreItem(new Item.Properties())
+			.SetEffect(MobEffects.DIG_SPEED));
 	public static final Supplier<Item> CORE_OF_DESTRUCTION = register("core_of_destruction", () -> new DestructionCoreItem(new Item.Properties())
 			.SetEffect(MobEffects.DAMAGE_BOOST));
-	public static final Supplier<Item> CORE_OF_END = register("core_of_end", () -> new Item(new Item.Properties()));
-	public static final Supplier<Item> CORE_OF_NETHER = register("core_of_nether", () -> new Item(new Item.Properties()));
-	public static final Supplier<Item> CORE_OF_OCEAN = register("core_of_ocean", () -> new Item(new Item.Properties()));
-	public static final Supplier<Item> CORE_OF_RELIC = register("core_of_relic", () -> new Item(new Item.Properties()));
-	public static final Supplier<Item> CORE_OF_SOUL = register("core_of_soul", () -> new Item(new Item.Properties()));
-	public static final Supplier<Item> CORE_OF_VITALITY = register("core_of_vitality", () -> new CoreItem(new Item.Properties())
+	public static final Supplier<Item> CORE_OF_END = register("core_of_end", () -> new EndCoreItem(new Item.Properties())
+			.SetEffect(MobEffects.NIGHT_VISION));
+	public static final Supplier<Item> CORE_OF_NETHER = register("core_of_nether", () -> new NetherCoreItem(new Item.Properties())
+			.SetEffect(MobEffects.FIRE_RESISTANCE));
+	public static final Supplier<Item> CORE_OF_OCEAN = register("core_of_ocean", () -> new OceanCoreItem(new Item.Properties())
+			.SetEffect(MobEffects.WATER_BREATHING));
+	public static final Supplier<Item> CORE_OF_RELIC = register("core_of_relic", () -> new RelicCoreItem(new Item.Properties())
+			.SetEffect(MobEffects.LUCK));
+	public static final Supplier<Item> CORE_OF_SOUL = register("core_of_soul", () -> new SoulCoreItem(new Item.Properties())
+			.SetEffect(MobEffects.DAMAGE_RESISTANCE));
+	public static final Supplier<Item> CORE_OF_VITALITY = register("core_of_vitality", () -> new VitalityCoreItem(new Item.Properties())
 			.SetEffect(MobEffects.HEALTH_BOOST));
 
 	// tools & armors

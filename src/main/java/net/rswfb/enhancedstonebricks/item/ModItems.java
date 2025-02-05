@@ -29,7 +29,7 @@ public class ModItems {
 	public static final Supplier<Item> AETHER_BADGE = register("aether_badge", () -> new Item(new Item.Properties()));
 	public static final Supplier<Item> ELEMENTAL_CORE = register("elemental_core", () -> new Item(new Item.Properties()));
 	public static final Supplier<Item> CORE_OF_DESERT = register("core_of_desert", () -> new Item(new Item.Properties()));
-	public static final Supplier<Item> CORE_OF_DESTRUCTION = register("core_of_destruction", () -> new CoreItem(new Item.Properties())
+	public static final Supplier<Item> CORE_OF_DESTRUCTION = register("core_of_destruction", () -> new DestructionCoreItem(new Item.Properties())
 			.SetEffect(MobEffects.DAMAGE_BOOST));
 	public static final Supplier<Item> CORE_OF_END = register("core_of_end", () -> new Item(new Item.Properties()));
 	public static final Supplier<Item> CORE_OF_NETHER = register("core_of_nether", () -> new Item(new Item.Properties()));

@@ -29,11 +29,12 @@ import net.minecraft.world.phys.HitResult;
 import net.rswfb.enhancedstonebricks.entity.ModEntityTypes;
 import net.rswfb.enhancedstonebricks.entity.projectile.CoreEntity;
 import net.rswfb.enhancedstonebricks.entity.projectile.DestructionCoreEntity;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
 public class CoreItem extends Item {
-    private MobEffect effect;
+    protected MobEffect effect;
     private Supplier<EntityType<? extends CoreEntity>> sp;
 
     public CoreItem(Properties properties) {
@@ -60,32 +61,36 @@ public class CoreItem extends Item {
             pPlayer.addEffect(mobeffectinstance);
 
             CoreEntity coreentity = new CoreEntity(ModEntityTypes.CORE_ENTITY.get(), pLevel);
-            coreentity.pitem = itemstack.getItem();
-            coreentity.duration = 400;
-            coreentity.setPos(pPlayer.getX(), pPlayer.getY(3), pPlayer.getZ());
-            coreentity.setItem(itemstack);
-            coreentity.signalTo(blockpos);
-
-            pLevel.gameEvent(GameEvent.PROJECTILE_SHOOT, coreentity.position(), GameEvent.Context.of(pPlayer));
-            pLevel.addFreshEntity(coreentity);
-
-            pLevel.playSound(
-                    null,
-                    pPlayer.getX(),
-                    pPlayer.getY(),
-                    pPlayer.getZ(),
-                    SoundEvents.ENDER_EYE_LAUNCH,
-                    SoundSource.NEUTRAL,
-                    0.5F,
-                    0.4F / (pLevel.getRandom().nextFloat() * 0.4F + 0.8F)
-            );
-            if (!pPlayer.getAbilities().instabuild) {
-                itemstack.shrink(1);
-            }
-
-            pPlayer.swing(pHand, true);
-            pPlayer.gameEvent(GameEvent.DRINK);
-            return InteractionResultHolder.success(itemstack);
+            return getItemStackInteractionResultHolder(pLevel, pPlayer, pHand, itemstack, blockpos, coreentity);
         }
+    }
+    @NotNull
+    static InteractionResultHolder<ItemStack> getItemStackInteractionResultHolder(Level pLevel, Player pPlayer, InteractionHand pHand, ItemStack itemstack, BlockPos blockpos, CoreEntity coreentity) {
+        coreentity.pitem = itemstack.getItem();
+        coreentity.duration = 400;
+        coreentity.setPos(pPlayer.getX(), pPlayer.getY(3), pPlayer.getZ());
+        coreentity.setItem(itemstack);
+        coreentity.signalTo(blockpos);
+
+        pLevel.gameEvent(GameEvent.PROJECTILE_SHOOT, coreentity.position(), GameEvent.Context.of(pPlayer));
+        pLevel.addFreshEntity(coreentity);
+
+        pLevel.playSound(
+                null,
+                pPlayer.getX(),
+                pPlayer.getY(),
+                pPlayer.getZ(),
+                SoundEvents.ENDER_EYE_LAUNCH,
+                SoundSource.NEUTRAL,
+                0.5F,
+                0.4F / (pLevel.getRandom().nextFloat() * 0.4F + 0.8F)
+        );
+        if (!pPlayer.getAbilities().instabuild) {
+            itemstack.shrink(1);
+        }
+
+        pPlayer.swing(pHand, true);
+        pPlayer.gameEvent(GameEvent.DRINK);
+        return InteractionResultHolder.success(itemstack);
     }
     }

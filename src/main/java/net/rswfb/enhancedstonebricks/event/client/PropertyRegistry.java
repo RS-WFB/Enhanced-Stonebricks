@@ -30,6 +30,9 @@ public class PropertyRegistry {
             ItemProperties.register(ModItems.REQUIEM.get(),new ResourceLocation(EnhancedStonebricks.MODID, Requiem.ENERGIZE_STATE_TAG),(itemstack, level, livingEntity, int_num)->{
                 return itemstack.getOrCreateTag().getInt(Requiem.ENERGIZE_STATE_TAG);
             });
+            ItemProperties.register(ModItems.REQUIEM.get(),new ResourceLocation(EnhancedStonebricks.MODID, "counter"),(itemstack, level, livingEntity, int_num)->{
+                return itemstack.getOrCreateTag().getInt("counter");
+            });
         });
     }
 

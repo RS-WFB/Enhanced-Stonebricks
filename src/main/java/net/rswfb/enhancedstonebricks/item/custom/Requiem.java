@@ -92,7 +92,7 @@ public class Requiem extends BowItem {
                             player.getX(),
                             player.getY(),
                             player.getZ(),
-                            SoundEvents.SOUL_ESCAPE,
+                            SoundEvents.ARROW_SHOOT,
                             SoundSource.PLAYERS,
                             2.0F,
                             1.0F / (pLevel.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F

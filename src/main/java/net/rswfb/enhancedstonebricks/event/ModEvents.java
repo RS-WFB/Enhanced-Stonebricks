@@ -102,23 +102,31 @@ public class ModEvents {
             ItemStack stack = owner.getMainHandItem();
             // 仅在服务端执行逻辑
             if (!level.isClientSide) {
+                CompoundTag nbt = stack.getOrCreateTag();
+                counter1 = nbt.getInt("counter");
                 // 示例：对击中的实体施加效果（如爆炸）
                 if (target instanceof LivingEntity livingTarget && arrow.getPersistentData().getBoolean("is_soul_crit")) {
                     if (counter1 % 3 == 2) {
-                        CompoundTag nbt = stack.getOrCreateTag();
+
                         nbt.putInt(Requiem.ENERGIZE_STATE_TAG, 1);
                         SyncTexturePacket packet = new SyncTexturePacket(owner.getId(), Requiem.ENERGIZE_STATE_TAG, 1);
                         PacketDistributor.PLAYER.with((ServerPlayer) owner).send(packet);
+                        level.playSound(null, owner.getX(), owner.getY(), owner.getZ(),SoundEvents.SOUL_ESCAPE,
+                                SoundSource.PLAYERS,
+                                4.5F,
+                                1.0F / (level.getRandom().nextFloat() * 0.4F + 1.2F) + 0.8F * 0.5F);
 
                     }
-                    if (counter1 % 3 == 0) {
+                    if (counter1 % 3 == 0 && counter1 != 0) {
                         summonDragonFireball(level, target, owner);
-                        CompoundTag nbt = stack.getOrCreateTag();
                         nbt.putInt(Requiem.ENERGIZE_STATE_TAG, 0);
                         SyncTexturePacket packet = new SyncTexturePacket(owner.getId(), Requiem.ENERGIZE_STATE_TAG, 0);
                         PacketDistributor.PLAYER.with((ServerPlayer) owner).send(packet);
                     }
                     counter1 ++;
+                    nbt.putInt("counter", counter1);
+                    SyncTexturePacket packet2 = new SyncTexturePacket(owner.getId(), "counter", counter1);
+                    PacketDistributor.PLAYER.with((ServerPlayer) owner).send(packet2);
                 }
             }
         }

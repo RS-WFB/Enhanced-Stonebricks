@@ -33,7 +33,7 @@ public class DestructionCoreEntityRenderer extends CoreEntityRenderer {
         public static void onClientEvent(FMLClientSetupEvent event) {
 
             event.enqueueWork(()->{
-                EntityRenderers.register(ModEntityTypes.DESTRUCTION_CORE_ENTITY.get(), CoreEntityRenderer::new);
+                EntityRenderers.register(ModEntityTypes.DESTRUCTION_CORE_ENTITY.get(), DestructionCoreEntityRenderer::new);
             });
         }
     }

@@ -19,7 +19,6 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        this.RubyModel(getResourceLocation(ModItems.RUBY.get()));
         this.AetherModel(getResourceLocation(ModItems.AETHER.get()));
         this.BadgeModel(getResourceLocation(ModItems.BADGE.get()));
         this.AetherBadgeModel(getResourceLocation(ModItems.AETHER_BADGE.get()));
@@ -39,16 +38,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         this.SteelChestplateModel(getResourceLocation(ModItems.STEEL_CHESTPLATE.get()));
         this.SteelLeggingsModel(getResourceLocation(ModItems.STEEL_LEGGINGS.get()));
         this.SteelBootsModel(getResourceLocation(ModItems.STEEL_BOOTS.get()));
+
+        this.ArmorPackageModel(getResourceLocation(ModItems.ARMOR_PACKAGE.get()));
+        this.EmptyArmorPackageModel(getResourceLocation(ModItems.EMPTY_ARMOR_PACKAGE.get()));
     }
 
 
     public ResourceLocation getResourceLocation(Item item){
         return Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item));
-    }
-    public void RubyModel(ResourceLocation item){
-        this.getBuilder(item.toString())
-                .parent(new ModelFile.UncheckedModelFile("item/generated"))
-                .texture("layer0",new ResourceLocation("enhancedstonebricks:item/ruby"));
     }
     public void SteelIngotModel(ResourceLocation item){
         this.getBuilder(item.toString())
@@ -145,6 +142,16 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .parent(new ModelFile.UncheckedModelFile("item/generated"))
                 .texture("layer0", new ResourceLocation("enhancedstonebricks:item/steel_pickaxe"));
     }
+    public void ArmorPackageModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/armor_package"));
+    }
+    public void EmptyArmorPackageModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/empty_armor_package"));
+    }
     public void IronStonebrickModel(ResourceLocation item){
         this.getBuilder(item.toString())
                 .parent(new ModelFile.UncheckedModelFile("block/iron_stonebrick"));
@@ -213,5 +220,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         this.getBuilder(item.toString())
                 .parent(new ModelFile.UncheckedModelFile("block/stonebrick_portal_block_def"));
     }
+
 
 }

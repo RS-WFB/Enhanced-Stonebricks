@@ -14,7 +14,6 @@ public class ModLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        this.add(ModItems.RUBY.get(),"Ruby");
         this.add(ModItems.AETHER.get(), "Aether");
         this.add(ModItems.STEEL_INGOT.get(),"Steel Ingot");
         this.add(ModItems.BADGE.get(),"Badge");

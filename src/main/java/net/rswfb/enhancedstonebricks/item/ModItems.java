@@ -10,6 +10,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.rswfb.enhancedstonebricks.EnhancedStonebricks;
 import net.rswfb.enhancedstonebricks.block.ModBlocks;
 import net.rswfb.enhancedstonebricks.item.custom.*;
+import net.rswfb.enhancedstonebricks.item.custom.Armors.EmptyArmorPackageItem;
+import net.rswfb.enhancedstonebricks.item.custom.CoreItems.*;
 import net.rswfb.enhancedstonebricks.item.custom.tool.ModArmorMaterial;
 
 import java.util.ArrayList;
@@ -21,7 +23,6 @@ public class ModItems {
 	public static final DeferredRegister<Item> ITEMS =
 			DeferredRegister.create(Registries.ITEM, EnhancedStonebricks.MODID);
 	// items
-	public static final Supplier<Item> RUBY = register("ruby", () -> new Item(new Item.Properties()));
 
 	public static final Supplier<Item> STEEL_INGOT = register("steel_ingot", () -> new Item(new Item.Properties()));
 	public static final Supplier<Item> AETHER = register("aether", () -> new Item(new Item.Properties()));
@@ -53,6 +54,8 @@ public class ModItems {
 	public static final Supplier<Item> STEEL_LEGGINGS = register("steel_leggings", () -> new ArmorItem(ModArmorMaterial.STEEL, ArmorItem.Type.LEGGINGS, (new Item.Properties())));
 	public static final Supplier<Item> STEEL_BOOTS = register("steel_boots", () -> new ArmorItem(ModArmorMaterial.STEEL, ArmorItem.Type.BOOTS, (new Item.Properties())));
 
+	public static final Supplier<Item> ARMOR_PACKAGE = register("armor_package", () -> new ArmorPackageItem(new Item.Properties().stacksTo(1)));
+	public static final Supplier<Item> EMPTY_ARMOR_PACKAGE = register("empty_armor_package", () -> new EmptyArmorPackageItem(new Item.Properties().stacksTo(1)));
 	// weapons
 	public static final Supplier<Item> REQUIEM = register("requiem", Requiem::new);
 
@@ -76,12 +79,11 @@ public class ModItems {
 	public static final Supplier<Item> STONEBRICK_PORTAL_BLOCK = register("stonebrick_portal_block_default", () -> new BlockItem(ModBlocks.StonebrickPortalBlock.get(), new Item.Properties()));
 
 	public static Supplier<Item> register(String name, Supplier<Item> supplier){
-        Supplier<Item> supplierItem =  ITEMS.register(name,supplier);
+        Supplier<Item> supplierItem = ITEMS.register(name,supplier);
         ITEMS_SUPPLIER.add(supplierItem);
         return supplierItem;
     }
 	public static void register(IEventBus eventBus) {
 		ITEMS.register(eventBus);
-
 	}
 }

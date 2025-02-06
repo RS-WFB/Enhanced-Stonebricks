@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.Block;
 import java.util.function.Supplier;
 
 public enum ModItemTiers implements Tier {
-    STEEL(3,2000,10F,4F,30,() -> Ingredient.of(ModItems.RUBY.get()));
+    STEEL(3,2000,10F,4F,30,() -> Ingredient.of(ModItems.STEEL_INGOT.get()));
 
     private final int level;
     private final int uses;

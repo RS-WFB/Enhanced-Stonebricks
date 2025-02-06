@@ -15,7 +15,7 @@ public class ModCreativeModeTab {
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
 			DeferredRegister.create(Registries.CREATIVE_MODE_TAB, EnhancedStonebricks.MODID);
 	public static final Supplier<CreativeModeTab> TUTORIAL_TAB = CREATIVE_MODE_TABS.register("tutorial_tab",
-		()-> CreativeModeTab.builder().icon(()->new ItemStack(ModItems.RUBY.get()))
+		()-> CreativeModeTab.builder().icon(()->new ItemStack(ModItems.AETHER_STONEBRICK.get()))
 			.title(Component.translatable(TUTORIAL_TAB_STRING))
 			.displayItems((pParameters, pOutput) -> {
 				ModItems.ITEMS_SUPPLIER.forEach(item->pOutput.accept(item.get()));

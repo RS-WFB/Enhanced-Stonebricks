@@ -65,7 +65,7 @@ public class CoreItem extends Item {
         }
     }
     @NotNull
-    static InteractionResultHolder<ItemStack> getItemStackInteractionResultHolder(Level pLevel, Player pPlayer, InteractionHand pHand, ItemStack itemstack, BlockPos blockpos, CoreEntity coreentity) {
+    protected static InteractionResultHolder<ItemStack> getItemStackInteractionResultHolder(Level pLevel, Player pPlayer, InteractionHand pHand, ItemStack itemstack, BlockPos blockpos, CoreEntity coreentity) {
         coreentity.pitem = itemstack.getItem();
         coreentity.duration = 400;
         coreentity.setPos(pPlayer.getX(), pPlayer.getY(3), pPlayer.getZ());

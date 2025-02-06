@@ -26,16 +26,13 @@ public class OceanCoreItem extends CoreItem {
         BlockHitResult blockhitresult = getPlayerPOVHitResult(pLevel, pPlayer, ClipContext.Fluid.NONE);
         BlockPos blockpos = new BlockPos((int)pPlayer.getX(), (int)pPlayer.getY(3), (int)pPlayer.getZ());
 
-        if (blockhitresult.getType() == HitResult.Type.BLOCK) {
-            return InteractionResultHolder.pass(itemstack);
-        } else {
-            pPlayer.startUsingItem(pHand);
-            MobEffect pEffect = effect;
-            MobEffectInstance mobeffectinstance = new MobEffectInstance(pEffect, 400, 2);
-            pPlayer.addEffect(mobeffectinstance);
+        pPlayer.startUsingItem(pHand);
+        MobEffect pEffect = effect;
+        MobEffectInstance mobeffectinstance = new MobEffectInstance(pEffect, 400, 2);
+        pPlayer.addEffect(mobeffectinstance);
 
-            CoreEntity coreentity = new CoreEntity(ModEntityTypes.OCEAN_CORE_ENTITY.get(), pLevel);
-            return getItemStackInteractionResultHolder(pLevel, pPlayer, pHand, itemstack, blockpos, coreentity);
-        }
+        CoreEntity coreentity = new CoreEntity(ModEntityTypes.OCEAN_CORE_ENTITY.get(), pLevel);
+        return getItemStackInteractionResultHolder(pLevel, pPlayer, pHand, itemstack, blockpos, coreentity);
+
     }
 }

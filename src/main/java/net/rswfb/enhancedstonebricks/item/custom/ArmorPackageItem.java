@@ -59,7 +59,7 @@ public class ArmorPackageItem extends Item {
                     pPlayer.getItemBySlot(EquipmentSlot.CHEST).shrink(1);
                     pPlayer.getItemBySlot(EquipmentSlot.LEGS).shrink(1);
                     pPlayer.getItemBySlot(EquipmentSlot.FEET).shrink(1);
-                    pPlayer.setItemInHand(pHand, ModItems.ARMOR_PACKAGE.get().getDefaultInstance());
+                    ArmorRetreatHandler(pPlayer, pHand, this.material);
                     pPlayer.getCooldowns().addCooldown(pPlayer.getItemInHand(pHand).getItem(), 20);
                 }
             }
@@ -78,7 +78,11 @@ public class ArmorPackageItem extends Item {
         pPlayer.swing(pHand, true);
         return InteractionResultHolder.success(itemstack);
     }
-    private void ArmorRetreatHandler(Item pItem){
-        EnhancedStonebricks.LOGGER.info("ArmorRetreatHandler");
+    private void ArmorRetreatHandler(Player pPlayer, InteractionHand pHand, ArmorMaterial pMaterial) {
+        if (pMaterial.getName().equals(ModArmorMaterial.STEEL.getName())){
+            pPlayer.setItemInHand(pHand, ModItems.ARMOR_PACKAGE.get().getDefaultInstance());
+        } else {
+            EnhancedStonebricks.LOGGER.info(pMaterial.getName());
+        }
     }
 }

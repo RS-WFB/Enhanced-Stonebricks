@@ -42,7 +42,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         this.StormStriderHelmetModel(getResourceLocation(ModItems.STORMSTRIDER_HELMET.get()));
         this.StormStriderChestplateModel(getResourceLocation(ModItems.STORMSTRIDER_CHESTPLATE.get()));
         this.StormStriderLeggingsModel(getResourceLocation(ModItems.STORMSTRIDER_LEGGINGS.get()));
-        this.SteelBootsModel(getResourceLocation(ModItems.STORMSTRIDER_BOOTS.get()));
+        this.StormStriderBootsModel(getResourceLocation(ModItems.STORMSTRIDER_BOOTS.get()));
 
         this.ArmorPackageModel(getResourceLocation(ModItems.ARMOR_PACKAGE.get()));
         this.EmptyArmorPackageModel(getResourceLocation(ModItems.EMPTY_ARMOR_PACKAGE.get()));

@@ -90,7 +90,6 @@ public class CoreItem extends Item {
         }
 
         pPlayer.swing(pHand, true);
-        pPlayer.gameEvent(GameEvent.DRINK);
         return InteractionResultHolder.success(itemstack);
     }
     }

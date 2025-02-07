@@ -59,13 +59,18 @@ public class Funcs {
     }
     public static boolean isFullSetOfArmor(Player pPlayer) {
         ArmorItem helmet, chestplate, leggings, boots;
-        helmet = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.HEAD).getItem();
-        chestplate = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.CHEST).getItem();
-        leggings = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.LEGS).getItem();
-        boots = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.FEET).getItem();
-        return helmet.getMaterial() == chestplate.getMaterial() &&
-                leggings.getMaterial() == boots.getMaterial() &&
-                chestplate.getMaterial() == leggings.getMaterial();
+
+        try{
+            helmet = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.HEAD).getItem();
+            chestplate = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.CHEST).getItem();
+            leggings = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.LEGS).getItem();
+            boots = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.FEET).getItem();
+            return helmet.getMaterial() == chestplate.getMaterial() &&
+                    leggings.getMaterial() == boots.getMaterial() &&
+                    chestplate.getMaterial() == leggings.getMaterial();
+        } catch (ClassCastException e) {
+            return false;
+        }
     }
     public static ArmorMaterial getArmorMaterial(Player pPlayer) {
         return ((ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.HEAD).getItem()).getMaterial();

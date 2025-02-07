@@ -4,6 +4,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -48,7 +51,8 @@ public class ClientPacketHandler {
                             retryEntity.getPersistentData().putBoolean(packet.pKey(), true);
                         }
                     }, 1); // 延迟 10 ticks
-                } else  {
+
+                } else {
                     entity.getPersistentData().putBoolean(packet.pKey(), true);
                 }
             }
@@ -58,26 +62,15 @@ public class ClientPacketHandler {
         context.workHandler().execute(() -> {
             if (Minecraft.getInstance().level != null) {
                 Entity entity = Minecraft.getInstance().level.getEntity(packet.entityId());
-                if (entity == null) {
-                    DelayedTaskManager.scheduleTask(() -> {
-                        Entity retryEntity = Minecraft.getInstance().level.getEntity(packet.entityId());
-                        if (retryEntity instanceof Player player){
-                            ItemStack item = player.getMainHandItem();
-                            CompoundTag nbt = item.getOrCreateTag();
-                            nbt.putInt(packet.pKey(), packet.pswitch());
-                        } else {
-                            if (entity instanceof Player player) {
-                                ItemStack item = player.getMainHandItem();
-                                CompoundTag nbt = item.getOrCreateTag();
-                                nbt.putInt(packet.pKey(), packet.pswitch());
-                            }
-
+                if (entity instanceof Player player) {
+                    if (packet.pKey().equals("armor_set")){
+                        EnhancedStonebricks.LOGGER.info("armor_set");
+                        switch (packet.pswitch()){
+                            case 0: break;
+                            case 1: player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 2));
+                            break;
                         }
-                        }
-                    , 1); // 延迟 10 ticks
-
-                } else {
-                    if (entity instanceof Player player) {
+                    } else {
                         ItemStack item = player.getMainHandItem();
                         CompoundTag nbt = item.getOrCreateTag();
                         nbt.putInt(packet.pKey(), packet.pswitch());

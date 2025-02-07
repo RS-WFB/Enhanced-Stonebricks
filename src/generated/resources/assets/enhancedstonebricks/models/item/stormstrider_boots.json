@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "enhancedstonebricks:item/steel_boots"
+    "layer0": "enhancedstonebricks:item/stormstrider_boots"
   }
 }

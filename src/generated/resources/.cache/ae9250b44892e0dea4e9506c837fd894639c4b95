@@ -1,4 +1,4 @@
-// 1.20.4	2025-02-07T23:12:40.0762026	Item Models: enhancedstonebricks
+// 1.20.4	2025-02-08T02:04:31.2456375	Item Models: enhancedstonebricks
 4c379db64d23308a55134c9e9097662b7a7c5ca2 assets/enhancedstonebricks/models/item/aether.json
 b0d31a532138cf0253f8d4f092fc067fb9f3a213 assets/enhancedstonebricks/models/item/aether_badge.json
 bb49beb32eeefad53a82bf494c0abbd9027dd07c assets/enhancedstonebricks/models/item/armor_package.json
@@ -20,7 +20,7 @@ f78b499e7ebd94607f4b0a08176cd27145f29248 assets/enhancedstonebricks/models/item/
 0e7a1efb2cc64746286784dd3d06200c9b7cc404 assets/enhancedstonebricks/models/item/steel_leggings.json
 08912e9286591151c0b1285e4a489560ba2d6a38 assets/enhancedstonebricks/models/item/steel_pickaxe.json
 655c200e38b512982830af2f03443e391f4a29c5 assets/enhancedstonebricks/models/item/steel_sword.json
-cab61e1135ae46aeaaecc8b4ec544f241a51ba51 assets/enhancedstonebricks/models/item/stormstrider_boots.json
+b8ecaec92715920ee415f09d2e60ece3714f2f5f assets/enhancedstonebricks/models/item/stormstrider_boots.json
 52db14e047d729c422f7754277146eaf5aa1bc00 assets/enhancedstonebricks/models/item/stormstrider_chestplate.json
 9385bd67ae9d2c1353baba88bb11996fe962b3b6 assets/enhancedstonebricks/models/item/stormstrider_helmet.json
 4ca62607390db74571d2fa8b69245c0d48ab8195 assets/enhancedstonebricks/models/item/stormstrider_leggings.json

@@ -55,7 +55,6 @@ public class ModEvents {
                     arrow.getPersistentData().putBoolean("soul_fire", true);
                     SyncPacket packet = new SyncPacket(arrow.getId(), "soul_fire" ,true);
                     // 发送给所有追踪该箭矢的玩家（包括射箭的玩家）
-                    PacketDistributor.PLAYER.with((ServerPlayer) player).send(packet);
                 }
             }
         }

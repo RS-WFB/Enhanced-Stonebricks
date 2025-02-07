@@ -3,9 +3,13 @@ package net.rswfb.enhancedstonebricks.event.utils;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.DragonFireball;
 import net.minecraft.world.entity.projectile.WitherSkull;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.rswfb.enhancedstonebricks.entity.projectile.CustonDragonFireball;
@@ -52,5 +56,18 @@ public class Funcs {
                 SoundSource.HOSTILE,
                 1.0F, 1.0F
         );
+    }
+    public static boolean isFullSetOfArmor(Player pPlayer) {
+        ArmorItem helmet, chestplate, leggings, boots;
+        helmet = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.HEAD).getItem();
+        chestplate = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.CHEST).getItem();
+        leggings = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.LEGS).getItem();
+        boots = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.FEET).getItem();
+        return helmet.getMaterial() == chestplate.getMaterial() &&
+                leggings.getMaterial() == boots.getMaterial() &&
+                chestplate.getMaterial() == leggings.getMaterial();
+    }
+    public static ArmorMaterial getArmorMaterial(Player pPlayer) {
+        return ((ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.HEAD).getItem()).getMaterial();
     }
 }

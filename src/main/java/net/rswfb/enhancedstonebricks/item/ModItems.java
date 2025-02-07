@@ -46,13 +46,20 @@ public class ModItems {
 	public static final Supplier<Item> CORE_OF_VITALITY = register("core_of_vitality", () -> new VitalityCoreItem(new Item.Properties())
 			.SetEffect(MobEffects.HEALTH_BOOST));
 
-	// tools & armors
+	// tools
 	public static final Supplier<Item> STEEL_SWORD = register("steel_sword", SteelSword::new);
 	public static final Supplier<Item> STEEL_PICKAXE = register("steel_pickaxe", SteelPickaxe::new);
+
+	// armors
 	public static final Supplier<Item> STEEL_HELMET = register("steel_helmet", () -> new ArmorItem(ModArmorMaterial.STEEL, ArmorItem.Type.HELMET, (new Item.Properties())));
 	public static final Supplier<Item> STEEL_CHESTPLATE = register("steel_chestplate", () -> new ArmorItem(ModArmorMaterial.STEEL, ArmorItem.Type.CHESTPLATE, (new Item.Properties())));
 	public static final Supplier<Item> STEEL_LEGGINGS = register("steel_leggings", () -> new ArmorItem(ModArmorMaterial.STEEL, ArmorItem.Type.LEGGINGS, (new Item.Properties())));
 	public static final Supplier<Item> STEEL_BOOTS = register("steel_boots", () -> new ArmorItem(ModArmorMaterial.STEEL, ArmorItem.Type.BOOTS, (new Item.Properties())));
+
+	public static final Supplier<Item> STORMSTRIDER_HELMET = register("stormstrider_helmet", () -> new ArmorItem(ModArmorMaterial.STORMSTRIDER, ArmorItem.Type.HELMET, new Item.Properties()));
+	public static final Supplier<Item> STORMSTRIDER_CHESTPLATE = register("stormstrider_chestplate", () -> new ArmorItem(ModArmorMaterial.STORMSTRIDER, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+	public static final Supplier<Item> STORMSTRIDER_LEGGINGS = register("stormstrider_leggings", () -> new ArmorItem(ModArmorMaterial.STORMSTRIDER, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+	public static final Supplier<Item> STORMSTRIDER_BOOTS = register("stormstrider_boots", () -> new ArmorItem(ModArmorMaterial.STORMSTRIDER, ArmorItem.Type.BOOTS, new Item.Properties()));
 
 	public static final Supplier<Item> ARMOR_PACKAGE = register("armor_package", () -> new ArmorPackageItem(new Item.Properties().stacksTo(1)));
 	public static final Supplier<Item> EMPTY_ARMOR_PACKAGE = register("empty_armor_package", () -> new EmptyArmorPackageItem(new Item.Properties().stacksTo(1)));

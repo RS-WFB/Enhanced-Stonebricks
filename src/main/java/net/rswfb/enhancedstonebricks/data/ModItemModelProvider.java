@@ -34,10 +34,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         this.SteelIngotModel(getResourceLocation(ModItems.STEEL_INGOT.get()));
         this.SteelSwordModel(getResourceLocation(ModItems.STEEL_SWORD.get()));
         this.SteelPickaxeModel(getResourceLocation(ModItems.STEEL_PICKAXE.get()));
+
         this.SteelHelmetModel(getResourceLocation(ModItems.STEEL_HELMET.get()));
         this.SteelChestplateModel(getResourceLocation(ModItems.STEEL_CHESTPLATE.get()));
         this.SteelLeggingsModel(getResourceLocation(ModItems.STEEL_LEGGINGS.get()));
         this.SteelBootsModel(getResourceLocation(ModItems.STEEL_BOOTS.get()));
+        this.StormStriderHelmetModel(getResourceLocation(ModItems.STORMSTRIDER_HELMET.get()));
+        this.StormStriderChestplateModel(getResourceLocation(ModItems.STORMSTRIDER_CHESTPLATE.get()));
+        this.StormStriderLeggingsModel(getResourceLocation(ModItems.STORMSTRIDER_LEGGINGS.get()));
+        this.SteelBootsModel(getResourceLocation(ModItems.STORMSTRIDER_BOOTS.get()));
 
         this.ArmorPackageModel(getResourceLocation(ModItems.ARMOR_PACKAGE.get()));
         this.EmptyArmorPackageModel(getResourceLocation(ModItems.EMPTY_ARMOR_PACKAGE.get()));
@@ -71,6 +76,26 @@ public class ModItemModelProvider extends ItemModelProvider {
         this.getBuilder(item.toString())
                 .parent(new ModelFile.UncheckedModelFile("item/generated"))
                 .texture("layer0", new ResourceLocation("enhancedstonebricks:item/steel_boots"));
+    }
+    public void StormStriderHelmetModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/stormstrider_helmet"));
+    }
+    public void StormStriderChestplateModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/stormstrider_chestplate"));
+    }
+    public void StormStriderLeggingsModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/stormstrider_leggings"));
+    }
+    public void StormStriderBootsModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/stormstrider_boots"));
     }
     public void AetherModel(ResourceLocation item){
         this.getBuilder(item.toString())

@@ -17,6 +17,9 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.rswfb.enhancedstonebricks.EnhancedStonebricks;
 import net.rswfb.enhancedstonebricks.item.ModItems;
 
+import static net.rswfb.enhancedstonebricks.event.utils.Funcs.getArmorMaterial;
+import static net.rswfb.enhancedstonebricks.event.utils.Funcs.isFullSetOfArmor;
+
 public class ArmorPackageItem extends Item {
     protected ArmorItem helmet, chestplate, leggings, boots;
     protected boolean isEmpty;
@@ -47,14 +50,8 @@ public class ArmorPackageItem extends Item {
         if (this.isEmpty) {
             if (!pPlayer.getItemBySlot(EquipmentSlot.HEAD).isEmpty() && !pPlayer.getItemBySlot(EquipmentSlot.CHEST).isEmpty()
                     && !pPlayer.getItemBySlot(EquipmentSlot.LEGS).isEmpty() && !pPlayer.getItemBySlot(EquipmentSlot.FEET).isEmpty()) {
-                this.helmet = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.HEAD).getItem();
-                this.chestplate = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.CHEST).getItem();
-                this.leggings = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.LEGS).getItem();
-                this.boots = (ArmorItem) pPlayer.getItemBySlot(EquipmentSlot.FEET).getItem();
-                if (this.helmet.getMaterial() == this.chestplate.getMaterial() &&
-                        this.leggings.getMaterial() == this.boots.getMaterial() &&
-                        this.chestplate.getMaterial() == this.leggings.getMaterial()) {
-                    this.material = this.helmet.getMaterial();
+                if (isFullSetOfArmor(pPlayer)) {
+                    this.material = getArmorMaterial(pPlayer);
                     pPlayer.getItemBySlot(EquipmentSlot.HEAD).shrink(1);
                     pPlayer.getItemBySlot(EquipmentSlot.CHEST).shrink(1);
                     pPlayer.getItemBySlot(EquipmentSlot.LEGS).shrink(1);

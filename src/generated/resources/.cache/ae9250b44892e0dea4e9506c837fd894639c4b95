@@ -1,4 +1,4 @@
-// 1.20.4	2025-02-06T18:06:52.4587409	Item Models: enhancedstonebricks
+// 1.20.4	2025-02-07T23:12:40.0762026	Item Models: enhancedstonebricks
 4c379db64d23308a55134c9e9097662b7a7c5ca2 assets/enhancedstonebricks/models/item/aether.json
 b0d31a532138cf0253f8d4f092fc067fb9f3a213 assets/enhancedstonebricks/models/item/aether_badge.json
 bb49beb32eeefad53a82bf494c0abbd9027dd07c assets/enhancedstonebricks/models/item/armor_package.json
@@ -12,6 +12,7 @@ bf4885ff354f7454c0f448089685054149d62ff8 assets/enhancedstonebricks/models/item/
 88653fb55428af57d32aa349fec64db7e957b110 assets/enhancedstonebricks/models/item/core_of_soul.json
 79c4a47082c840ab5159f4966dd0263e888a1b38 assets/enhancedstonebricks/models/item/core_of_vitality.json
 e085fe60b96557658f2673ef5801404ee4851314 assets/enhancedstonebricks/models/item/elemental_core.json
+61eb968dc6446d2186df3abff69f56a05c43a977 assets/enhancedstonebricks/models/item/empty_armor_package.json
 cab61e1135ae46aeaaecc8b4ec544f241a51ba51 assets/enhancedstonebricks/models/item/steel_boots.json
 8f15f01e50bae2e9773425bd3c233e0481b608f5 assets/enhancedstonebricks/models/item/steel_chestplate.json
 f78b499e7ebd94607f4b0a08176cd27145f29248 assets/enhancedstonebricks/models/item/steel_helmet.json
@@ -19,3 +20,7 @@ f78b499e7ebd94607f4b0a08176cd27145f29248 assets/enhancedstonebricks/models/item/
 0e7a1efb2cc64746286784dd3d06200c9b7cc404 assets/enhancedstonebricks/models/item/steel_leggings.json
 08912e9286591151c0b1285e4a489560ba2d6a38 assets/enhancedstonebricks/models/item/steel_pickaxe.json
 655c200e38b512982830af2f03443e391f4a29c5 assets/enhancedstonebricks/models/item/steel_sword.json
+cab61e1135ae46aeaaecc8b4ec544f241a51ba51 assets/enhancedstonebricks/models/item/stormstrider_boots.json
+52db14e047d729c422f7754277146eaf5aa1bc00 assets/enhancedstonebricks/models/item/stormstrider_chestplate.json
+9385bd67ae9d2c1353baba88bb11996fe962b3b6 assets/enhancedstonebricks/models/item/stormstrider_helmet.json
+4ca62607390db74571d2fa8b69245c0d48ab8195 assets/enhancedstonebricks/models/item/stormstrider_leggings.json

@@ -43,12 +43,13 @@ public class ClientPacketHandler {
                     DelayedTaskManager.scheduleTask(() -> {
                         Entity retryEntity = Minecraft.getInstance().level.getEntity(packet.entityId());
                         if (retryEntity != null) {
-                            retryEntity.getPersistentData().putBoolean(packet.pKey(), true);
+                            retryEntity.getPersistentData().putBoolean(packet.pKey(), packet.pswitch());
                         }
                     }, 1); // 延迟 10 ticks
 
                 } else {
-                    entity.getPersistentData().putBoolean(packet.pKey(), true);
+                    entity.getPersistentData().putBoolean(packet.pKey(), packet.pswitch());
+                    EnhancedStonebricks.LOGGER.info(String.valueOf(entity.getPersistentData().getBoolean("armor_effect")));
                 }
             }
         });
@@ -59,7 +60,6 @@ public class ClientPacketHandler {
                 Entity entity = Minecraft.getInstance().level.getEntity(packet.entityId());
                 if (entity instanceof Player player) {
                     if (packet.pKey().equals("armor_set")){
-                        EnhancedStonebricks.LOGGER.info("armor_set");
                         switch (packet.pswitch()){
                             case 0: break;
                             case 1: player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 2));

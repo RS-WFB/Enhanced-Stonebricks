@@ -14,15 +14,8 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.projectile.ItemSupplier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.rswfb.enhancedstonebricks.entity.ModEntityTypes;
-import net.minecraft.world.entity.projectile.Projectile;
-import net.rswfb.enhancedstonebricks.item.ModItems;
-
-import java.util.function.Supplier;
 
 public class CoreEntity extends Entity implements ItemSupplier {
     private static final EntityDataAccessor<ItemStack> DATA_ITEM_STACK = SynchedEntityData.defineId(CoreEntity.class, EntityDataSerializers.ITEM_STACK);

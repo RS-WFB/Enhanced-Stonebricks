@@ -1,20 +1,15 @@
 package net.rswfb.enhancedstonebricks.network.handler;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 import net.rswfb.enhancedstonebricks.EnhancedStonebricks;
-import net.rswfb.enhancedstonebricks.item.custom.Requiem;
 import net.rswfb.enhancedstonebricks.network.packet.SoulFireSyncPacket;
 import net.rswfb.enhancedstonebricks.network.packet.SyncPacket;
 import net.rswfb.enhancedstonebricks.network.packet.SyncTexturePacket;

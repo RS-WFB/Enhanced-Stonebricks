@@ -5,7 +5,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.ItemLike;
 import net.rswfb.enhancedstonebricks.block.ModBlocks;
 import net.rswfb.enhancedstonebricks.item.ModItems;
 import  static net.minecraft.tags.ItemTags.*;

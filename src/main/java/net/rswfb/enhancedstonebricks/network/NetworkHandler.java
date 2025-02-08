@@ -5,7 +5,6 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlerEvent;
 import net.neoforged.neoforge.network.registration.IPayloadRegistrar;
 import net.rswfb.enhancedstonebricks.EnhancedStonebricks;
-import net.rswfb.enhancedstonebricks.ExampleMod;
 import net.rswfb.enhancedstonebricks.network.handler.ClientPacketHandler;
 import net.rswfb.enhancedstonebricks.network.packet.SoulFireSyncPacket;
 import net.rswfb.enhancedstonebricks.network.packet.SyncPacket;

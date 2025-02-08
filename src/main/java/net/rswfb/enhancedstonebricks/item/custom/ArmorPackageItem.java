@@ -1,28 +1,18 @@
 package net.rswfb.enhancedstonebricks.item.custom;
 
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.BlockHitResult;
-import net.rswfb.enhancedstonebricks.EnhancedStonebricks;
-import net.rswfb.enhancedstonebricks.item.ModItems;
 
 import javax.annotation.Nullable;
 
 import java.util.List;
-
-import static net.rswfb.enhancedstonebricks.event.utils.Funcs.getArmorMaterial;
-import static net.rswfb.enhancedstonebricks.event.utils.Funcs.isFullSetOfArmor;
 
 public class ArmorPackageItem extends Item {
     protected ArmorItem helmet, chestplate, leggings, boots;
@@ -47,13 +37,6 @@ public class ArmorPackageItem extends Item {
         ItemStack stack = pPlayer.getItemInHand(pHand);
         CompoundTag nbt = stack.getOrCreateTag();
 
-        if (pPlayer.isShiftKeyDown()) {
-            // 清空存储的护甲
-            nbt.remove("stored_armor");
-            pPlayer.displayClientMessage(Component.literal("护甲已清空！"), true);
-            return InteractionResultHolder.success(stack);
-        }
-
         if (nbt.contains("stored_armor")) {
             // 穿戴存储的护甲
             CompoundTag armorNbt = nbt.getCompound("stored_armor");
@@ -65,6 +48,7 @@ public class ArmorPackageItem extends Item {
             }
             nbt.remove("stored_armor");
             pPlayer.displayClientMessage(Component.literal("护甲已穿戴！"), true);
+            pPlayer.getCooldowns().addCooldown(pPlayer.getItemInHand(pHand).getItem(), 20);
             return InteractionResultHolder.success(stack);
         } else {
             // 存储当前护甲
@@ -81,9 +65,11 @@ public class ArmorPackageItem extends Item {
             if (!armorNbt.isEmpty()) {
                 nbt.put("stored_armor", armorNbt);
                 pPlayer.displayClientMessage(Component.literal("护甲已存储！"), true);
+                pPlayer.getCooldowns().addCooldown(pPlayer.getItemInHand(pHand).getItem(), 20);
                 return InteractionResultHolder.success(stack);
             } else {
                 pPlayer.displayClientMessage(Component.literal("未穿戴护甲！"), true);
+                pPlayer.getCooldowns().addCooldown(pPlayer.getItemInHand(pHand).getItem(), 20);
                 return InteractionResultHolder.fail(stack);
             }
         }

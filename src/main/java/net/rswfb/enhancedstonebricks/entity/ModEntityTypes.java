@@ -1,6 +1,5 @@
 package net.rswfb.enhancedstonebricks.entity;
 
-import io.netty.util.Attribute;
 import net.rswfb.enhancedstonebricks.ExampleMod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;

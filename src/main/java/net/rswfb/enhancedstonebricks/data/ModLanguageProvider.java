@@ -1,6 +1,7 @@
 package net.rswfb.enhancedstonebricks.data;
 
 import net.rswfb.enhancedstonebricks.block.ModBlocks;
+import net.rswfb.enhancedstonebricks.client.KeyBindings;
 import net.rswfb.enhancedstonebricks.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
@@ -57,5 +58,7 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add(ModBlocks.VitalityRelicBlock.get(), "Vitality Relic Block");
 
         this.add(ModBlocks.StonebrickPortalBlock.get(), "Stonebrick Portal Block");
+
+        this.add(KeyBindings.KEY_ARMOR_EFFECT, "Armor Effect");
     }
 }

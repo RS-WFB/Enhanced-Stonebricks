@@ -14,5 +14,5 @@ public class KeyBindings {
     public static final String KEY_ARMOR_EFFECT = "key.enhancedstonebricks.armor_effect";
 
     public static final KeyMapping ARMOR_EFFECT = new KeyMapping(KEY_CATEGORY_ENHANCEDSTONEBRICKS, KeyConflictContext.IN_GAME,
-            InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_Q,KEY_ARMOR_EFFECT);
+            InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_V,KEY_ARMOR_EFFECT);
 }

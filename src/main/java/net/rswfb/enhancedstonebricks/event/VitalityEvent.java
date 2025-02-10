@@ -18,21 +18,13 @@ public class VitalityEvent {
     @SubscribeEvent
     public static void onPlayerDeath(LivingDeathEvent event) {
         if (event.getEntity() instanceof Player player) {
-            // 检查玩家是否持有自定义图腾（背包或快捷栏）
             if (hasCustomTotem(player)) {
-                // 取消死亡
                 event.setCanceled(true);
-
-                // 触发不死效果
                 applyTotemEffects(player);
-
-                // 消耗物品（可选）
                 consumeTotem(player);
             }
         }
     }
-
-    // 检查玩家是否持有自定义图腾
     private static boolean hasCustomTotem(Player player) {
         for (ItemStack stack : player.getInventory().items) {
             if (stack.getItem() == ModItems.CORE_OF_VITALITY.get()) {
@@ -41,24 +33,20 @@ public class VitalityEvent {
         }
         return false;
     }
-
-    // 应用不死图腾效果
     private static void applyTotemEffects(Player player) {
-        player.setHealth(1.0F); // 恢复生命值
-        player.removeAllEffects(); // 清除负面状态
-        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 900, 1)); // 恢复II
-        player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 1)); // 伤害吸收
+        player.setHealth(1.0F);
+        player.removeAllEffects();
+        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 900, 1));
+        player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 1));
         player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
-                SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 1.0F, 1.0F); // 播放音效
+                SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 1.0F, 1.0F);
 
     }
-
-    // 消耗图腾（删除物品）
     private static void consumeTotem(Player player) {
         for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
             ItemStack stack = player.getInventory().getItem(i);
             if (stack.getItem() == ModItems.CORE_OF_VITALITY.get()) {
-                stack.shrink(1); // 减少物品数量
+                stack.shrink(1);
                 break;
             }
         }

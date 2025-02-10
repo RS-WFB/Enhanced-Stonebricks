@@ -10,16 +10,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.client.event.InputEvent;
 import net.neoforged.neoforge.event.TickEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
-import net.neoforged.neoforge.network.PacketDistributor;
 import net.rswfb.enhancedstonebricks.EnhancedStonebricks;
 import net.rswfb.enhancedstonebricks.client.KeyBindings;
 import net.rswfb.enhancedstonebricks.item.custom.tool.ModArmorMaterial;
-import net.rswfb.enhancedstonebricks.network.packet.SoulFireSyncPacket;
-import net.rswfb.enhancedstonebricks.network.packet.SyncPacket;
-import net.rswfb.enhancedstonebricks.network.packet.SyncTexturePacket;
 
 import static net.rswfb.enhancedstonebricks.event.utils.Funcs.*;
 

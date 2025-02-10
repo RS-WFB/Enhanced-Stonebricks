@@ -33,13 +33,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
        this.simpleBlockWithItem(ModBlocks.OceanRelicBlock.get(),cubeAll(ModBlocks.OceanRelicBlock.get()));
        this.simpleBlockWithItem(ModBlocks.SoulRelicBlock.get(),cubeAll(ModBlocks.SoulRelicBlock.get()));
        this.simpleBlockWithItem(ModBlocks.VitalityRelicBlock.get(),cubeAll(ModBlocks.VitalityRelicBlock.get()));
-       this.ModPortalBlock(ModBlocks.StonebrickPortalBlock.get());
+       this.propertyBlock(ModBlocks.StonebrickPortalBlock.get());
 
        logBlock(((RotatedPillarBlock) ModBlocks.LightningStruckLog.get()));
        simpleBlockItem(ModBlocks.LightningStruckLog.get(),models().withExistingParent("enhancedstonebricks:lightningstruck_log", "minecraft:block/cube_column"));
 
    }
-   public void ModPortalBlock(Block block){
+   public void propertyBlock(Block block){
        var block_0 = models().cubeAll("stonebrick_portal_block_default",new ResourceLocation(ExampleMod.MODID,ModelProvider.BLOCK_FOLDER+"/"+"stonebrick_portal_block_def"));
        var block_1 = models().cubeAll("stonebrick_portal_block_d1",new ResourceLocation(ExampleMod.MODID, ModelProvider.BLOCK_FOLDER+"/"+"stonebrick_portal_block_d1"));
        var block_2 = models().cubeAll("stonebrick_portal_block_d2",new ResourceLocation(ExampleMod.MODID, ModelProvider.BLOCK_FOLDER+"/"+"stonebrick_portal_block_d2"));

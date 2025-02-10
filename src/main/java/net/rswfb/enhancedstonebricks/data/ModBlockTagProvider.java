@@ -39,7 +39,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.IronStonebrick.get());
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(ModBlocks.CarbonizedStonebrick.get());
 
-        // Mineable
+        // Mine able
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.SteelBlock.get());
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.SteelStonebrick.get());
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.IronStonebrick.get());

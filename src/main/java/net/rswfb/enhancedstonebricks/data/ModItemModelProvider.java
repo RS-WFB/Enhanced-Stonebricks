@@ -18,6 +18,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        this.TestItemModel(getResourceLocation(ModItems.TEST_ITEM.get()));
         this.AetherModel(getResourceLocation(ModItems.AETHER.get()));
         this.BadgeModel(getResourceLocation(ModItems.BADGE.get()));
         this.AetherBadgeModel(getResourceLocation(ModItems.AETHER_BADGE.get()));
@@ -33,6 +34,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         this.SteelIngotModel(getResourceLocation(ModItems.STEEL_INGOT.get()));
         this.SteelSwordModel(getResourceLocation(ModItems.STEEL_SWORD.get()));
         this.SteelPickaxeModel(getResourceLocation(ModItems.STEEL_PICKAXE.get()));
+
+        this.StormIngotModel(getResourceLocation(ModItems.STORM_INGOT.get()));
+        this.AstralIngotModel(getResourceLocation(ModItems.ASTRAL_INGOT.get()));
 
         this.SteelHelmetModel(getResourceLocation(ModItems.STEEL_HELMET.get()));
         this.SteelChestplateModel(getResourceLocation(ModItems.STEEL_CHESTPLATE.get()));
@@ -51,10 +55,25 @@ public class ModItemModelProvider extends ItemModelProvider {
     public ResourceLocation getResourceLocation(Item item){
         return Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item));
     }
+    public void TestItemModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/test_item"));
+    }
     public void SteelIngotModel(ResourceLocation item){
         this.getBuilder(item.toString())
                 .parent(new ModelFile.UncheckedModelFile("item/generated"))
                 .texture("layer0", new ResourceLocation("enhancedstonebricks:item/steel_ingot"));
+    }
+    public void StormIngotModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/storm_ingot"));
+    }
+    public void AstralIngotModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/astral_ingot"));
     }
     public void SteelHelmetModel(ResourceLocation item){
         this.getBuilder(item.toString())

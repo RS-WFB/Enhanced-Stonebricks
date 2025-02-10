@@ -3,6 +3,8 @@ package net.rswfb.enhancedstonebricks.data;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.rswfb.enhancedstonebricks.block.ModBlocks;
@@ -124,6 +126,9 @@ public class ModRecipeProvider extends RecipeProvider {
                                                             ModItems.CORE_OF_VITALITY.get()),
                         RecipeCategory.MISC,ModItems.CORE_OF_DESTRUCTION.get(),0.3f,100)
                 .unlockedBy("has_elemental_core",has(ModItems.ELEMENTAL_CORE.get()))
+                .save(pRecipeOutput);
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.TEST_ITEM.get()),RecipeCategory.MISC,ModItems.STORM_INGOT.get(),0.3f,200)
+                .unlockedBy("has_iron_stonebrick",has(ModBlocks.IronStonebrick.get()))
                 .save(pRecipeOutput);
 
         SmithingTransformRecipeBuilder.smithing(

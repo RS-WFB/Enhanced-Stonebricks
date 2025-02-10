@@ -15,6 +15,7 @@ public class ModLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        this.add(ModItems.TEST_ITEM.get(), "test item");
         this.add(ModItems.AETHER.get(), "Aether");
         this.add(ModItems.STEEL_INGOT.get(),"Steel Ingot");
         this.add(ModItems.BADGE.get(),"Badge");
@@ -28,6 +29,8 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add(ModItems.CORE_OF_RELIC.get(),"Core of Relic");
         this.add(ModItems.CORE_OF_SOUL.get(),"Core of Soul");
         this.add(ModItems.CORE_OF_VITALITY.get(),"Core of Vitality");
+        this.add(ModItems.STORM_INGOT.get(),"Storm Ingot");
+        this.add(ModItems.ASTRAL_INGOT.get(),"Astral Ingot");
 
         this.add(ModItems.STEEL_SWORD.get(),"Steel Sword");
         this.add(ModItems.STEEL_PICKAXE.get(),"Steel Pickaxe");

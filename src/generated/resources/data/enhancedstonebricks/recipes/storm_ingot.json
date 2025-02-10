@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "ingredient": {
+    "item": "enhancedstonebricks:test_item"
+  },
+  "result": "enhancedstonebricks:storm_ingot"
+}

@@ -18,6 +18,7 @@
   "block.enhancedstonebricks.vitality_relic_block": "Vitality Relic Block",
   "item.enhancedstonebricks.aether": "Aether",
   "item.enhancedstonebricks.aether_badge": "Aether Badge",
+  "item.enhancedstonebricks.astral_ingot": "Astral Ingot",
   "item.enhancedstonebricks.badge": "Badge",
   "item.enhancedstonebricks.core_of_desert": "Core of Desert",
   "item.enhancedstonebricks.core_of_destruction": "Core of Destruction",
@@ -36,5 +37,7 @@
   "item.enhancedstonebricks.steel_leggings": "Steel Leggings",
   "item.enhancedstonebricks.steel_pickaxe": "Steel Pickaxe",
   "item.enhancedstonebricks.steel_sword": "Steel Sword",
+  "item.enhancedstonebricks.storm_ingot": "Storm Ingot",
+  "item.enhancedstonebricks.test_item": "test item",
   "key.enhancedstonebricks.armor_effect": "Armor Effect"
 }

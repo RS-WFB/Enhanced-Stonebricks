@@ -23,7 +23,7 @@ public class ModItems {
 	public static final DeferredRegister<Item> ITEMS =
 			DeferredRegister.create(Registries.ITEM, EnhancedStonebricks.MODID);
 	// items
-
+	public static final Supplier<Item> TEST_ITEM = register("test_item", () -> new TestItem(new Item.Properties()));
 	public static final Supplier<Item> STEEL_INGOT = register("steel_ingot", () -> new Item(new Item.Properties()));
 	public static final Supplier<Item> AETHER = register("aether", () -> new Item(new Item.Properties()));
 	public static final Supplier<Item> BADGE = register("badge", () -> new Item(new Item.Properties()));
@@ -45,6 +45,11 @@ public class ModItems {
 			.SetEffect(MobEffects.DAMAGE_RESISTANCE));
 	public static final Supplier<Item> CORE_OF_VITALITY = register("core_of_vitality", () -> new VitalityCoreItem(new Item.Properties())
 			.SetEffect(MobEffects.HEALTH_BOOST));
+
+
+	// materials
+	public static final Supplier<Item> STORM_INGOT = register("storm_ingot", () -> new Item(new Item.Properties()));
+	public static final Supplier<Item> ASTRAL_INGOT = register("astral_ingot", () -> new Item(new Item.Properties()));
 
 	// tools
 	public static final Supplier<Item> STEEL_SWORD = register("steel_sword", SteelSword::new);

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_iron_stonebrick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "enhancedstonebricks:iron_stonebrick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "enhancedstonebricks:storm_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_iron_stonebrick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "enhancedstonebricks:storm_ingot"
+    ]
+  }
+}

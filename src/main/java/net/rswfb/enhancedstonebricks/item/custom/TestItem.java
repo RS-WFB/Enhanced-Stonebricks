@@ -19,8 +19,7 @@ public class TestItem extends Item {
         ItemStack itemstack = pPlayer.getItemInHand(pHand);
         CompoundTag nbt = new CompoundTag();
         if (!itemstack.getTag().contains("Test")) {
-            nbt.putBoolean("Test", true);
-            itemstack.setTag(nbt);
+
         }
 
 

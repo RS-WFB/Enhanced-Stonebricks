@@ -47,9 +47,14 @@ public class ModItems {
 			.SetEffect(MobEffects.HEALTH_BOOST));
 
 
+
 	// materials
 	public static final Supplier<Item> STORM_INGOT = register("storm_ingot", () -> new Item(new Item.Properties()));
 	public static final Supplier<Item> ASTRAL_INGOT = register("astral_ingot", () -> new Item(new Item.Properties()));
+
+	public static final Supplier<Item> CRUCIBLE = register("crucible", () -> new ItemContainer(new Item.Properties()));
+	public static final Supplier<Item> LID = register("lid", () -> new Item(new Item.Properties()));
+	public static final Supplier<Item> CRUCIBLE_WITH_LID = register("crucible_with_lid", () -> new Item(new Item.Properties()));
 
 	// tools
 	public static final Supplier<Item> STEEL_SWORD = register("steel_sword", SteelSword::new);

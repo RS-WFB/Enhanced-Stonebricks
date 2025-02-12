@@ -7,6 +7,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.minecraft.core.registries.Registries;
 import net.rswfb.enhancedstonebricks.EnhancedStonebricks;
+import net.rswfb.enhancedstonebricks.item.custom.Crucibles;
 
 import java.util.function.Supplier;
 
@@ -18,7 +19,7 @@ public class ModCreativeModeTab {
 		()-> CreativeModeTab.builder().icon(()->new ItemStack(ModItems.AETHER_STONEBRICK.get()))
 			.title(Component.translatable(TUTORIAL_TAB_STRING))
 			.displayItems((pParameters, pOutput) -> {
-				ModItems.ITEMS_SUPPLIER.forEach(item->pOutput.accept(item.get()));
+				ModItems.ITEMS_SUPPLIER.stream().filter(obj -> !(obj.get() instanceof Crucibles) || obj.get().getClass() == Crucibles.class).forEach(item->pOutput.accept(item.get()));
 			}).build());
 
 	public static void register(IEventBus eventBus) { CREATIVE_MODE_TABS.register(eventBus); }

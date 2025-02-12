@@ -19,6 +19,9 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         this.TestItemModel(getResourceLocation(ModItems.TEST_ITEM.get()));
+        this.CrucibleModel(getResourceLocation(ModItems.CRUCIBLE.get()));
+        this.LidModel(getResourceLocation(ModItems.LID.get()));
+        this.CrucibleWithLidModel(getResourceLocation(ModItems.CRUCIBLE_WITH_LID.get()));
         this.AetherModel(getResourceLocation(ModItems.AETHER.get()));
         this.BadgeModel(getResourceLocation(ModItems.BADGE.get()));
         this.AetherBadgeModel(getResourceLocation(ModItems.AETHER_BADGE.get()));
@@ -59,6 +62,21 @@ public class ModItemModelProvider extends ItemModelProvider {
         this.getBuilder(item.toString())
                 .parent(new ModelFile.UncheckedModelFile("item/generated"))
                 .texture("layer0", new ResourceLocation("enhancedstonebricks:item/test_item"));
+    }
+    public void CrucibleModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/crucible"));
+    }
+    public void LidModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/lid"));
+    }
+    public void CrucibleWithLidModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/crucible_with_lid"));
     }
     public void SteelIngotModel(ResourceLocation item){
         this.getBuilder(item.toString())

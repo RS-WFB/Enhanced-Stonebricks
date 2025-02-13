@@ -130,6 +130,13 @@ public class ModRecipeProvider extends RecipeProvider {
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.TEST_ITEM.get()),RecipeCategory.MISC,ModItems.STORM_INGOT.get(),0.3f,200)
                 .unlockedBy("has_iron_stonebrick",has(ModBlocks.IronStonebrick.get()))
                 .save(pRecipeOutput);
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.CRUCIBLE_STEEL.get()),RecipeCategory.MISC,ModItems.STEEL_INGOT.get(),0.3f,200)
+                .unlockedBy("has_iron",has(Items.IRON_INGOT))
+                .save(pRecipeOutput, "steel_c");
+
+
+
+
         SmithingTransformRecipeBuilder.smithing(
                 Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
                 Ingredient.of(ModItems.AETHER_BADGE.get()),

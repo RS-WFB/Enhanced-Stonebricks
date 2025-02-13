@@ -1,4 +1,4 @@
-// 1.20.4	2025-02-11T03:07:44.9369825	Item Models: enhancedstonebricks
+// 1.20.4	2025-02-13T01:39:49.825438	Item Models: enhancedstonebricks
 4c379db64d23308a55134c9e9097662b7a7c5ca2 assets/enhancedstonebricks/models/item/aether.json
 b0d31a532138cf0253f8d4f092fc067fb9f3a213 assets/enhancedstonebricks/models/item/aether_badge.json
 bb49beb32eeefad53a82bf494c0abbd9027dd07c assets/enhancedstonebricks/models/item/armor_package.json
@@ -13,6 +13,7 @@ bf4885ff354f7454c0f448089685054149d62ff8 assets/enhancedstonebricks/models/item/
 88653fb55428af57d32aa349fec64db7e957b110 assets/enhancedstonebricks/models/item/core_of_soul.json
 79c4a47082c840ab5159f4966dd0263e888a1b38 assets/enhancedstonebricks/models/item/core_of_vitality.json
 f4eaaa6e1c53e0a2300be8005a84e4566aa14764 assets/enhancedstonebricks/models/item/crucible.json
+401c09e1eddd8bd48be523f5b59672e7a645ff50 assets/enhancedstonebricks/models/item/crucible_steel.json
 401c09e1eddd8bd48be523f5b59672e7a645ff50 assets/enhancedstonebricks/models/item/crucible_with_lid.json
 e085fe60b96557658f2673ef5801404ee4851314 assets/enhancedstonebricks/models/item/elemental_core.json
 61eb968dc6446d2186df3abff69f56a05c43a977 assets/enhancedstonebricks/models/item/empty_armor_package.json

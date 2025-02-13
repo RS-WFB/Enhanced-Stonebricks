@@ -24,6 +24,10 @@ public class ModDataGeneratorHandler {
                 event.includeClient(),
                 (DataProvider.Factory<ModLanguageProvider>) pOutput -> new ModLanguageProvider(pOutput,EnhancedStonebricks.MODID,"en_us")
         );
+        event.getGenerator().addProvider(
+                event.includeClient(),
+                (DataProvider.Factory<ModZhCnLanguageProvider>) pOutput -> new ModZhCnLanguageProvider(pOutput,EnhancedStonebricks.MODID)
+        );
         // 物品模型
         event.getGenerator().addProvider(
                 event.includeClient(),

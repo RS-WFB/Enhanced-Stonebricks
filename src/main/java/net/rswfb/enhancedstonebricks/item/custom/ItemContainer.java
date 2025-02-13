@@ -23,7 +23,9 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.inventory.tooltip.BundleTooltip;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.rswfb.enhancedstonebricks.EnhancedStonebricks;
 import net.rswfb.enhancedstonebricks.item.ModItems;
 
 public class ItemContainer extends Item {
@@ -33,7 +35,7 @@ public class ItemContainer extends Item {
     private static final int BAR_COLOR = Mth.color(0.4F, 0.4F, 1.0F);
     public Stream<ItemStack> contents;
 
-    public ItemContainer(Item.Properties pProperties) {
+    public ItemContainer(Properties pProperties) {
         super(pProperties);
     }
 
@@ -43,15 +45,22 @@ public class ItemContainer extends Item {
 
     @Override
     public boolean overrideStackedOnOther(ItemStack pStack, Slot pSlot, ClickAction pAction, Player pPlayer) {
+        EnhancedStonebricks.LOGGER.info("1");
         if (pStack.getCount() != 1 || pAction != ClickAction.SECONDARY) {
+            EnhancedStonebricks.LOGGER.info("2");
             return false;
         } else {
             ItemStack itemstack = pSlot.getItem();
+            EnhancedStonebricks.LOGGER.info(String.valueOf(getWeight(itemstack) >= 16));
+            EnhancedStonebricks.LOGGER.info(String.valueOf(itemstack.getItem().canFitInsideContainerItems()));
+
             if (itemstack.isEmpty()) {
                 this.playRemoveOneSound(pPlayer);
                 removeOne(pStack).ifPresent(p_150740_ -> add(pStack, pSlot.safeInsert(p_150740_)));
-            } else if (itemstack.getItem().canFitInsideContainerItems() && getWeight(itemstack) >= 16) {
+            } else if (itemstack.getItem().canFitInsideContainerItems()) {
+                EnhancedStonebricks.LOGGER.info("123");
                 if (64 - getContentWeight(pStack) >= 16){
+                    EnhancedStonebricks.LOGGER.info("456");
                     int i = 16 / getWeight(itemstack);
                     int j = add(pStack, pSlot.safeTake(itemstack.getCount(), i, pPlayer));
                     if (j > 0) {
@@ -90,7 +99,7 @@ public class ItemContainer extends Item {
     }
 
     /**
-     * Called to trigger the item's "innate" right click behavior. To handle when this item is used on a Block, see {@link net.minecraft.world.item.Item#useOn(net.minecraft.world.item.context.UseOnContext)}.
+     * Called to trigger the item's "innate" right click behavior. To handle when this item is used on a Block, see {@link Item#useOn(UseOnContext)}.
      */
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
@@ -99,9 +108,8 @@ public class ItemContainer extends Item {
         ItemStack itemstack2 = pPlayer.getItemInHand(InteractionHand.MAIN_HAND);
         if (itemstack1.getItem() == ModItems.LID.get() && itemstack2.getItem() == ModItems.CRUCIBLE.get()) {
             this.contents = getContents(itemstack2);
-            ItemStack item = new ItemStack(ModItems.CRUCIBLE_WITH_LID.get());
             itemstack1.shrink(1);
-            pPlayer.setItemInHand(InteractionHand.MAIN_HAND, item);
+            pPlayer.setItemInHand(InteractionHand.MAIN_HAND, ((Crucibles) ModItems.CRUCIBLE_WITH_LID.get()).setContainer((ItemContainer) itemstack2.getItem()).getDefaultInstance());
             return InteractionResultHolder.success(itemstack);
         } else {
         if (dropContents(itemstack, pPlayer)) {
@@ -165,7 +173,7 @@ public class ItemContainer extends Item {
         }
     }
 
-    private static Optional<CompoundTag> getMatchingItem(ItemStack pStack, ListTag pList) {
+    static Optional<CompoundTag> getMatchingItem(ItemStack pStack, ListTag pList) {
         return pStack.is(Items.BUNDLE)
                 ? Optional.empty()
                 : pList.stream()
@@ -175,7 +183,7 @@ public class ItemContainer extends Item {
                 .findFirst();
     }
 
-    private static int getWeight(ItemStack pStack) {
+    static int getWeight(ItemStack pStack) {
         if (pStack.is(Items.BUNDLE)) {
             return 4 + getContentWeight(pStack);
         } else {
@@ -190,7 +198,7 @@ public class ItemContainer extends Item {
         }
     }
 
-    private static int getContentWeight(ItemStack pStack) {
+    static int getContentWeight(ItemStack pStack) {
         return getContents(pStack).mapToInt(p_186356_ -> getWeight(p_186356_) * p_186356_.getCount()).sum();
     }
 

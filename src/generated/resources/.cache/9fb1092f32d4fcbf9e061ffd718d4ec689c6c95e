@@ -1,4 +1,4 @@
-// 1.20.4	2025-02-11T03:07:44.9379807	Recipes
+// 1.20.4	2025-02-13T02:18:32.3244087	Recipes
 c56291209b0152a73eda0d28bdedaad788c85d0f data/enhancedstonebricks/advancements/recipes/misc/aether_badge.json
 8d4abfc544929909c5dd2657b05854581b24c82b data/enhancedstonebricks/advancements/recipes/misc/aether_stonebrick.json
 394b21066127e72e32b2fd950347611bc38273bf data/enhancedstonebricks/advancements/recipes/misc/badge.json
@@ -31,5 +31,7 @@ d4c67474666d931502b0076ab414c84a95eab731 data/enhancedstonebricks/recipes/steel_
 cf2fc3b286cf86602699232107c9d84789f727bd data/enhancedstonebricks/recipes/steel_pickaxe.json
 2f47551bd0a7a138acc806202cc7da271dcf0f6a data/enhancedstonebricks/recipes/steel_sword.json
 10bff2cdc4b1c0e97b8f5ebc8b7666fcfa352a39 data/enhancedstonebricks/recipes/storm_ingot.json
+d4d34c70838486dabcd009a56d37e12e1d501a17 data/minecraft/advancements/recipes/misc/steel_c.json
 e6d7ba9bb48b5764183b69396f5d1ed4636db1c7 data/minecraft/advancements/recipes/tools/elemental_core_smithing.json
 5dc93387b21c39e1a7875431c9c73716eb7d37e5 data/minecraft/recipes/elemental_core_smithing.json
+d911c69c345ad53e06ae4ef910ce2752eb9df551 data/minecraft/recipes/steel_c.json

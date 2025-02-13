@@ -52,6 +52,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         this.ArmorPackageModel(getResourceLocation(ModItems.ARMOR_PACKAGE.get()));
         this.EmptyArmorPackageModel(getResourceLocation(ModItems.EMPTY_ARMOR_PACKAGE.get()));
+
+        this.CrucibleSteelModel(getResourceLocation(ModItems.CRUCIBLE_STEEL.get()));
     }
 
 
@@ -74,6 +76,11 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .texture("layer0", new ResourceLocation("enhancedstonebricks:item/lid"));
     }
     public void CrucibleWithLidModel(ResourceLocation item){
+        this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation("enhancedstonebricks:item/crucible_with_lid"));
+    }
+    public void CrucibleSteelModel(ResourceLocation item){
         this.getBuilder(item.toString())
                 .parent(new ModelFile.UncheckedModelFile("item/generated"))
                 .texture("layer0", new ResourceLocation("enhancedstonebricks:item/crucible_with_lid"));

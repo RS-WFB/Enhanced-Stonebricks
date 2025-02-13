@@ -54,7 +54,8 @@ public class ModItems {
 
 	public static final Supplier<Item> CRUCIBLE = register("crucible", () -> new ItemContainer(new Item.Properties()));
 	public static final Supplier<Item> LID = register("lid", () -> new Item(new Item.Properties()));
-	public static final Supplier<Item> CRUCIBLE_WITH_LID = register("crucible_with_lid", () -> new Item(new Item.Properties()));
+	public static final Supplier<Item> CRUCIBLE_WITH_LID = register("crucible_with_lid", () -> new Crucibles(new Item.Properties()));
+	public static final Supplier<Item> CRUCIBLE_STEEL = register("crucible_steel", () -> new Crucibles.Crucible_Steel(new Item.Properties()));
 
 	// tools
 	public static final Supplier<Item> STEEL_SWORD = register("steel_sword", SteelSword::new);

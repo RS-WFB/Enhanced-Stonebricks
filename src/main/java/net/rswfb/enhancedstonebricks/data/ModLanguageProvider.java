@@ -5,6 +5,7 @@ import net.rswfb.enhancedstonebricks.client.KeyBindings;
 import net.rswfb.enhancedstonebricks.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
+import net.rswfb.enhancedstonebricks.item.custom.Crucibles;
 
 public class ModLanguageProvider extends LanguageProvider {
 
@@ -63,5 +64,9 @@ public class ModLanguageProvider extends LanguageProvider {
         this.add(ModBlocks.StonebrickPortalBlock.get(), "Stonebrick Portal Block");
 
         this.add(KeyBindings.KEY_ARMOR_EFFECT, "Armor Effect");
+
+        ModItems.ITEMS_SUPPLIER.stream().filter(obj -> (obj.get() instanceof Crucibles)).forEach(obj -> {
+            this.add(obj.get(), "Crucible_with_lid");
+        });
     }
 }
